@@ -3,7 +3,57 @@
 
 
 
+bool skaitytiDuomenisIsFailo(vector<Student>& studentai, const string& failoPavadinimas) {
+    ifstream inputFile(failoPavadinimas);
+    if (!inputFile.is_open()) {
+        cerr << "Nepavyko atidaryti failo: " << failoPavadinimas << endl;
+        return false;
+    }
 
+    string headerLine;
+    getline(inputFile, headerLine);
+
+    string eilute;
+    int lineNumber = 1;
+    while (getline(inputFile, eilute)) {
+        lineNumber++;
+        istringstream iss(eilute);
+        Student student;
+
+        if (!(iss >> student.vardas >> student.pavarde)) {
+            cerr << "Klaida eilutėje " << lineNumber << ": Nepavyko nuskaityti vardo ir pavardės." << endl;
+            continue;
+        }
+
+        int temp;
+        bool valid = true;
+
+        while (iss >> temp) {
+            if (temp >= 0 && temp <= 10) {
+                student.nd.push_back(temp);
+            } else {
+                cerr << "Klaida eilutėje " << lineNumber << ": Neteisingas skaičius ar formatas." << endl;
+                valid = false;
+                break;
+            }
+        }
+
+        if (!valid || student.nd.empty()) {
+            continue;
+        }
+
+        student.egz = student.nd.back();
+        student.nd.pop_back();
+
+        student.skaiciuotiGalutiniVid();
+        student.skaiciuotiGalutiniMed();
+
+        studentai.push_back(student);
+    }
+
+    inputFile.close();
+    return true;
+}
 void skaitytiDuomenisIsVartotojo(vector<Student>& studentai) {
     int studentuKiekis;
     cout << "Keliu studentu duomenis norite ivesti? ";
