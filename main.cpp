@@ -28,6 +28,8 @@ int main() {
             return 1;
         }
 
+    sort(studentai.begin(), studentai.end(), compareByName);
+
     char calcChoice;
         cout << "Ka norite apskaiciuoti? 1 - vidurkis, 2 - mediana, 0 - abu \n";
         cin >> calcChoice;
