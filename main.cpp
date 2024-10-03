@@ -47,6 +47,10 @@ int main() {
             default:
                 cerr << "Neteisingas pasirinkimas!" << endl;
         }
+       }
+    catch (const exception& e) {
+        cerr << "Ivyko klaida: " << e.what() << endl;
+    }
 
     return 0;
 }
