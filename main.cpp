@@ -8,10 +8,25 @@
 using namespace std;
 
 int main() {
-    vector<Student> studentai;
+   vector<Student> studentai;
+    char pasirinkimas;
 
-    cout << "Atsakykite i pateiktus klausimus apie studentu duomenis: " << endl;
-    skaitytiDuomenisIsVartotojo(studentai);
+    try {
+        cout << "Ar norite ivesti duomenis rankiniu budu, ar nuskaityti is failo? 0 - rankiniu budu, 1 - is failo: ";
+        cin >> pasirinkimas;
+
+        if (pasirinkimas == '1') {
+            string failoPavadinimas = pasirinktiFaila();
+            if (!skaitytiDuomenisIsFailo(studentai, failoPavadinimas)) {
+                cerr << "Nepavyko nuskaityti duomenų iš failo." << endl;
+                return 1;
+            }
+        } else if (pasirinkimas == '0') {
+            skaitytiDuomenisIsVartotojo(studentai);
+        } else {
+            cerr << "Atsiprasome, tokio pasirinkimo nera." << endl;
+            return 1;
+        }
 
     char calcChoice;
         cout << "Ka norite apskaiciuoti? 1 - vidurkis, 2 - mediana, 0 - abu \n";
