@@ -201,3 +201,6 @@ void spausdintiStudentus(const vector<Student>& studentai) {
                   << setw(20) << left << fixed << setprecision(2) << student.galutinisMed << endl;
     }
 }
+bool compareByName(const Student& a, const Student& b) {
+    return a.vardas < b.vardas;
+}
