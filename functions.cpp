@@ -112,7 +112,27 @@ void skaitytiDuomenisIsVartotojo(vector<Student>& studentai) {
         studentai.push_back(student);
     }
 }
+string pasirinktiFaila() {
+    int failoPasirinkimas;
+    cout << "Pasirinkite faila, kuri norite nuskaityti:\n";
+    cout << "1 - kursiokai.txt\n" << "2 - studentai10000.txt\n" << "3 - studentai100000.txt\n" << "4 - studentai1000000.txt\n";
+    cout << "Iveskite pasirinkima (1-4): ";
+    cin >> failoPasirinkimas;
 
+    switch (failoPasirinkimas) {
+        case 1:
+            return "kursiokai.txt";
+        case 2:
+            return "studentai10000.txt";
+        case 3:
+            return "studentai100000.txt";
+        case 4:
+            return "studentai1000000.txt";
+        default:
+            cerr << "Neteisingas pasirinkimas. Naudojamas kursiokai.txt\n";
+            return "kursiokai.txt";
+    }
+}
 int atsitiktiniaiBalai(int min, int max) {
     static random_device rd;
     static mt19937 gen(rd());
