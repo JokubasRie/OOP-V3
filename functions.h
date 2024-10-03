@@ -13,6 +13,8 @@ void spausdintiStudentus(const vector<Student>& students);
 void spausdintiStudentusVidurki(const vector<Student>& students);
 void spausdintiStudentusMediana(const vector<Student>& students);
 
+bool compareByName(const Student& a, const Student& b);
+
 int atsitiktiniaiBalai(int min = 0, int max = 10);
 void generuotiAtsitiktiniusBalus(Student& student, int kiekNd);
 
