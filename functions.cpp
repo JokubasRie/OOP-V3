@@ -253,3 +253,15 @@ void spausdintiStudentusIFaila(const vector<Student>& studentai, const string& f
 
     failas.close();
 }
+void rusiuotiStudentusIrIssaugotiIFailus(const vector<Student>& studentai) {
+    vector<Student> vargsiukai;
+    vector<Student> kietiakiai;
+    
+    rusiuotiStudentus(studentai, vargsiukai, kietiakiai);
+
+    spausdintiStudentusIFaila(vargsiukai, "vargsiukai.txt");
+    cout << "Vargšiukai išsaugoti į failą 'vargsiukai.txt'.\n";
+
+    spausdintiStudentusIFaila(kietiakiai, "kietiakiai.txt");
+    cout << "Kietiakiai išsaugoti į failą 'kietiakiai.txt'.\n";
+}
