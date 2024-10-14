@@ -238,3 +238,18 @@ void rusiuotiStudentus(const vector<Student>& studentai, vector<Student>& vargsi
         }
     }
 }
+void spausdintiStudentusIFaila(const vector<Student>& studentai, const string& failoPavadinimas) {
+    ofstream failas(failoPavadinimas);
+
+    if (!failas.is_open()) {
+        cerr << "Nepavyko atidaryti failo: " << failoPavadinimas << endl;
+        return;
+    }
+
+    failas << "Vardas Pavarde Galutinis (Vid.)\n";
+    for (const auto& studentas : studentai) {
+        failas << studentas.vardas << " " << studentas.pavarde << " " << fixed << setprecision(2) << studentas.galutinisVid << "\n";
+    }
+
+    failas.close();
+}
