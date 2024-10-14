@@ -311,3 +311,11 @@ void laikuMatavimai(int studentuSkaicius, const string& failoPavadinimas) {
     duration<double> saveKietiakiaiTime = saveKietiakiaiEnd - saveKietiakiaiStart;
     cout << "Kietiaku isvedimo i faila laikas: " << saveKietiakiaiTime.count() << " s\n";
 }
+void apdorotiVisusFailus() {
+    vector<int> studentCounts = {1000, 10000, 100000, 1000000, 10000000};
+    for (size_t i = 0; i < studentCounts.size(); ++i) {
+        string failoPavadinimas = "studentai_" + to_string(studentCounts[i]) + ".txt";
+        laikuMatavimai(studentCounts[i], failoPavadinimas);
+        cout << endl;
+    }
+}
