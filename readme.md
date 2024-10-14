@@ -9,7 +9,7 @@
 3. Pridėtas studentų rūšiavimas pagal vardą.
 
 
-***Programos veikimo paaiškinimas 1 ***
+***Programos veikimo paaiškinimas 1***
 1. Paleidus programą vartotojas turi galimybę pasirinkti, ar nori pats įvesti duomenis ar nori juos nuskaityti iš failo ( turi įvesti 1, jei nori nuskaityti duomenis iš failo arba 0, jei nori juos įvesti pats).
    - Jeigu įvedamas sąlygoje nenurodytas variantas, programa išmeta klaidą bei pasiūlo bandyti iš naujo.
    - Pasirinkus, jog duomenis norite nuskaityti iš failo, vartotojui pasiūlomi 4 skirtingi failų variantai bei leidžiama pasirinkti norimą. Jei įvedamas ne atitinkamą failą žymintis simbolis (šiuo atveju skaičius nuo 1 iki 4), tai automatiškai skaičiavimams parenkamas kursiokai.txt failas. Toliau vartotojui leidžiama pasirinkti, ka nori apskaičiuoti (1 - vidurkį, 2 - medianą, 0 - abu). Vėlgi, jei įvedamas sąlygoje nenurodytas simbolis išspausdinama klaida, jog pasirinkimas buvo neteisingas. Teisingu atveju - išspausdinama duomenų lentelė. 
@@ -47,6 +47,7 @@ Paleidęs programą naudotojas sulaukia klausimo: ,,ar norite sugeneruoti duomen
 
 
 ***Programos sugeneruotų rezultatų pavyzdys***
+
 ![image](https://github.com/user-attachments/assets/4e749467-bb22-413c-87b9-816964835fee)
 ![image](https://github.com/user-attachments/assets/6f970cd7-be2a-4bed-94be-b40984c43a8c)
 
