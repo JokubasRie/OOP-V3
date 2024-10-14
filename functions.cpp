@@ -229,3 +229,12 @@ void generuotiStudentuFaila(int studentuSkaicius, const string& failoPavadinimas
 
     failas.close();
 }
+void rusiuotiStudentus(const vector<Student>& studentai, vector<Student>& vargsiukai, vector<Student>& kietiakiai) {
+    for (const auto& studentas : studentai) {
+        if (studentas.galutinisVid < 5.0) {
+            vargsiukai.push_back(studentas);
+        } else {
+            kietiakiai.push_back(studentas);
+        }
+    }
+}
