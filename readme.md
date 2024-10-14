@@ -44,6 +44,7 @@
 6. void apdorotiVisusFailus() - funkcija atlieka visų penkių studentų sąrašų generavimą, skaičiuojant laiką kiekvienam failui.
 
 ***Programos veikimo paaiškinimas 2 ***
+
 Paleidęs programą naudotojas sulaukia klausimo: ,,ar norite sugeneruoti duomenu failus?" Jei pasirenka, kad nenori (t.y įveda 0), tai toliau naudotojo yra klausiami klausimai, kurie aprašyti programos veikimo paaiškinimo 1 dalyje. Tačiau, jei vartotojas pasirenka, jog nori sugeneruoti failus (t.y įveda 1), tai programa jam leidžia pasirinkti viena iš pateiktų failų variantų. Pasirinkęs, kokį nors iš variantų, jis ekrane išvysta pasirinkto failo analizę.
 
 
