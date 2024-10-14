@@ -204,3 +204,28 @@ void spausdintiStudentus(const vector<Student>& studentai) {
 bool compareByName(const Student& a, const Student& b) {
     return a.vardas < b.vardas;
 }
+void generuotiStudentuFaila(int studentuSkaicius, const string& failoPavadinimas) {
+    ofstream failas(failoPavadinimas);
+
+    if (!failas.is_open()) {
+        cerr << "Nepavyko atidaryti failo." << endl;
+        return;
+    }
+
+    failas << "Vardas Pavarde ND1 ND2 ND3 ND4 ND5 Egzaminas\n";
+
+    for (int i = 1; i <= studentuSkaicius; ++i) {
+        string vardas = "Vardas" + to_string(i);
+        string pavarde = "Pavarde" + to_string(i);
+
+        failas << vardas << " " << pavarde;
+
+        for (int j = 0; j < 5; ++j) {
+            failas << " " << atsitiktiniaiBalai(1, 10);
+        }
+
+        failas << " " << atsitiktiniaiBalai(1, 10) << "\n";
+    }
+
+    failas.close();
+}
