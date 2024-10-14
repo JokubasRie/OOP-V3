@@ -265,3 +265,49 @@ void rusiuotiStudentusIrIssaugotiIFailus(const vector<Student>& studentai) {
     spausdintiStudentusIFaila(kietiakiai, "kietiakiai.txt");
     cout << "Kietiakiai išsaugoti į failą 'kietiakiai.txt'.\n";
 }
+void laikuMatavimai(int studentuSkaicius, const string& failoPavadinimas) {
+    auto start = high_resolution_clock::now();
+
+    generuotiStudentuFaila(studentuSkaicius, failoPavadinimas);
+
+    auto end = high_resolution_clock::now();
+
+    duration<double> generationTime = end - start;
+
+    cout << "Sugeneruotas failas: " << failoPavadinimas << " su " << studentuSkaicius << " irasu.\n";
+    cout << "Failo generavimo laikas: " << generationTime.count() << " s\n";
+
+    auto readStart = high_resolution_clock::now();
+
+    vector<Student> studentai;
+    skaitytiDuomenisIsFailo(studentai, failoPavadinimas);
+
+    auto readEnd = high_resolution_clock::now();
+    duration<double> readTime = readEnd - readStart;
+    cout << "Failo nuskaitymo laikas: " << readTime.count() << " s\n";
+
+    auto sortStart = high_resolution_clock::now();
+    sort(studentai.begin(), studentai.end(), compareByName);
+    auto sortEnd = high_resolution_clock::now();
+    duration<double> sortTime = sortEnd - sortStart;
+    cout << "Rusiavimo pagal varda laikas: " << sortTime.count() << " s\n";
+
+    auto divideStart = high_resolution_clock::now();
+    vector<Student> vargsiukai, kietiakiai;
+    rusiuotiStudentus(studentai, vargsiukai, kietiakiai);
+    auto divideEnd = high_resolution_clock::now();
+    duration<double> divideTime = divideEnd - divideStart;
+    cout << "Dalijimo i kietiakus ir vargsiukus laikas: " << divideTime.count() << " s\n";
+
+    auto saveVargsiukaiStart = high_resolution_clock::now();
+    spausdintiStudentusIFaila(vargsiukai, "vargsiukai.txt");
+    auto saveVargsiukaiEnd = high_resolution_clock::now();
+    duration<double> saveVargsiukaiTime = saveVargsiukaiEnd - saveVargsiukaiStart;
+    cout << "Vargsiuku isvedimo i faila laikas: " << saveVargsiukaiTime.count() << " s\n";
+
+    auto saveKietiakiaiStart = high_resolution_clock::now();
+    spausdintiStudentusIFaila(kietiakiai, "kietiakiai.txt");
+    auto saveKietiakiaiEnd = high_resolution_clock::now();
+    duration<double> saveKietiakiaiTime = saveKietiakiaiEnd - saveKietiakiaiStart;
+    cout << "Kietiaku isvedimo i faila laikas: " << saveKietiakiaiTime.count() << " s\n";
+}
