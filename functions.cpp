@@ -375,10 +375,12 @@ void laikuMatavimai(int studentuSkaicius, const string& failoPavadinimas) {
 
 
 void apdorotiVisusFailus() {
-    vector<int> studentCounts = {1000, 10000, 100000, 1000000, 10000000};
+    list<int> studentCounts = {1000, 10000, 100000, 1000000, 10000000};
+    auto it = studentCounts.begin();
     for (size_t i = 0; i < studentCounts.size(); ++i) {
-        string failoPavadinimas = "studentai_" + to_string(studentCounts[i]) + ".txt";
-        laikuMatavimai(studentCounts[i], failoPavadinimas);
+        advance(it, i); // Pereiname iteratoriumi į reikiamą vietą
+        string failoPavadinimas = "studentai_" + to_string(*it) + ".txt";
+        laikuMatavimai(*it, failoPavadinimas);
         cout << endl;
     }
 }
