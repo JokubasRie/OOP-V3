@@ -4,9 +4,9 @@
 #include "Mylib.h"
 
 struct Student {
-    string vardas;
-    string pavarde;
-    vector<int> nd;
+    std::string vardas;
+    std::string pavarde;
+    std::list<int> nd;
     int egz;
     double galutinisVid;
     double galutinisMed;
