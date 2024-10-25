@@ -77,10 +77,11 @@ HDD - 932GB
 
 **1000:**
 
-Veiksmas	Vidurkis (s)
-1000 studentų rūšiavimo laikas	0s
-1000 kietiakų išvedimo į failą laikas	0.003070s
-1000 įrašų dalijimo į dvi grupes laikas	0.000502s
-1000 vargšiukų išvedimo į failą laikas	0 s 
-Failo generavimas                     	0 s
+Veiksmas	- Vidurkis (s)
+1000 studentų rūšiavimo laikas - 0s
+1000 kietiakų išvedimo į failą laikas - 0.003070s
+1000 įrašų dalijimo į dvi grupes laikas - 0.000502s
+1000 vargšiukų išvedimo į failą laikas - 0 s 
+Failo generavimas - 	0 s
+
 
