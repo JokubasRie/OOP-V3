@@ -56,7 +56,13 @@ Paleidęs programą naudotojas sulaukia klausimo: ,,ar norite sugeneruoti duomen
 
 
 ***Kompiuterio parametrai:***
+
 CPU - Intel(R) Core(TM) i5-10300H CPU @ 2.50GHz
 RAM - 8GB
 SSD - 477GB
+
+
+***Rankinio įvedimo rezultatai su atmintyje saugomais adresais:***
+
+![image](https://github.com/user-attachments/assets/f63673a3-e45a-49e1-bf7e-ea9c4bf19f82)
 
