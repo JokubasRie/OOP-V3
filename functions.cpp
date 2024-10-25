@@ -1,7 +1,21 @@
 #include "functions.h"
 #include "Mylib.h"
 
+int atsitiktiniaiBalai(int min, int max) {
+    static random_device rd;
+    static mt19937 gen(rd());
+    uniform_int_distribution<> distrib(min, max);
+    return distrib(gen);
+}
 
+void generuotiAtsitiktiniusBalus(Student& student, int kiekNd) {
+    student.nd.clear();
+    for (int i = 0; i < kiekNd; ++i) {
+        int atsitiktinisBalas = atsitiktiniaiBalai();
+        student.nd.push_back(atsitiktinisBalas);
+    }
+    student.egz = atsitiktiniaiBalai();
+}
 
 bool skaitytiDuomenisIsFailo(vector<Student>& studentai, const string& failoPavadinimas) {
     ifstream inputFile(failoPavadinimas);
@@ -54,6 +68,7 @@ bool skaitytiDuomenisIsFailo(vector<Student>& studentai, const string& failoPava
     inputFile.close();
     return true;
 }
+
 void skaitytiDuomenisIsVartotojo(vector<Student>& studentai) {
     int studentuKiekis;
     cout << "Keliu studentu duomenis norite ivesti? ";
@@ -112,6 +127,7 @@ void skaitytiDuomenisIsVartotojo(vector<Student>& studentai) {
         studentai.push_back(student);
     }
 }
+
 string pasirinktiFaila() {
     int failoPasirinkimas;
     cout << "Pasirinkite faila, kuri norite nuskaityti:\n";
@@ -133,20 +149,6 @@ string pasirinktiFaila() {
             return "kursiokai.txt";
     }
 }
-int atsitiktiniaiBalai(int min, int max) {
-    static random_device rd;
-    static mt19937 gen(rd());
-    uniform_int_distribution<> distrib(min, max);
-    return distrib(gen);
-}
-void generuotiAtsitiktiniusBalus(Student& student, int kiekNd) {
-    student.nd.clear();
-    for (int i = 0; i < kiekNd; ++i) {
-        int atsitiktinisBalas = atsitiktiniaiBalai();
-        student.nd.push_back(atsitiktinisBalas);
-    }
-    student.egz = atsitiktiniaiBalai();
-}
 
 void Student::skaiciuotiGalutiniVid() {
     if (nd.size() == 0) {
@@ -155,8 +157,8 @@ void Student::skaiciuotiGalutiniVid() {
     }
     double ndVidurkis = accumulate(nd.begin(), nd.end(), 0.0) / nd.size();
     galutinisVid = 0.4 * ndVidurkis + 0.6 * egz;
-
 }
+
 void Student::skaiciuotiGalutiniMed() {
     if (nd.size() == 0) {
         galutinisMed = 0;
@@ -170,6 +172,7 @@ void Student::skaiciuotiGalutiniMed() {
         galutinisMed = sorted_nd[sorted_nd.size() / 2];
     galutinisMed = 0.4 * galutinisMed + 0.6 * egz;
 }
+
 void spausdintiStudentusVidurki(const vector<Student>& studentai) {
     cout << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde"
               << setw(20) << left << "Galutinis (Vid.)" << endl;
@@ -180,6 +183,7 @@ void spausdintiStudentusVidurki(const vector<Student>& studentai) {
                   << setw(20) << left << fixed << setprecision(2) << student.galutinisVid << endl;
     }
 }
+
 void spausdintiStudentusMediana(const vector<Student>& studentai) {
     cout << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde"
               << setw(20) << left << "Galutinis (Med.)" << endl;
@@ -190,6 +194,7 @@ void spausdintiStudentusMediana(const vector<Student>& studentai) {
                   << setw(20) << left << fixed << setprecision(2) << student.galutinisMed << endl;
     }
 }
+
 void spausdintiStudentus(const vector<Student>& studentai) {
     cout << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde"
               << setw(20) << left << "Galutinis (Vid.)" << setw(20) << left << "Galutinis (Med.)" << endl;
@@ -201,9 +206,19 @@ void spausdintiStudentus(const vector<Student>& studentai) {
                   << setw(20) << left << fixed << setprecision(2) << student.galutinisMed << endl;
     }
 }
+
 bool compareByName(const Student& a, const Student& b) {
     return a.vardas < b.vardas;
 }
+
+bool compareBySurname(const Student& a, const Student& b) {
+    return a.pavarde < b.pavarde;
+}
+
+bool compareByGrade(const Student& a, const Student& b) {
+    return a.galutinisVid > b.galutinisVid;
+}
+
 void generuotiStudentuFaila(int studentuSkaicius, const string& failoPavadinimas) {
     ofstream failas(failoPavadinimas);
 
@@ -212,23 +227,25 @@ void generuotiStudentuFaila(int studentuSkaicius, const string& failoPavadinimas
         return;
     }
 
-    failas << "Vardas Pavarde ND1 ND2 ND3 ND4 ND5 Egzaminas\n";
+    failas << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde" << setw(5) << left << "ND1" << setw(5) << left << "ND2"
+           << setw(5) << left << "ND3" << setw(5) << left << "ND4" << setw(5) << left << "ND5" << setw(5) << left << "Egzaminas\n";
 
     for (int i = 1; i <= studentuSkaicius; ++i) {
         string vardas = "Vardas" + to_string(i);
         string pavarde = "Pavarde" + to_string(i);
 
-        failas << vardas << " " << pavarde;
+        failas << setw(15) << left << vardas << " " << setw(15) << left << pavarde;
 
         for (int j = 0; j < 5; ++j) {
-            failas << " " << atsitiktiniaiBalai(1, 10);
+            failas << setw(5) << left << atsitiktiniaiBalai(1, 10);
         }
 
-        failas << " " << atsitiktiniaiBalai(1, 10) << "\n";
+        failas << setw(5) << left << atsitiktiniaiBalai(1, 10) << "\n";
     }
 
     failas.close();
 }
+
 void rusiuotiStudentus(const vector<Student>& studentai, vector<Student>& vargsiukai, vector<Student>& kietiakiai) {
     for (const auto& studentas : studentai) {
         if (studentas.galutinisVid < 5.0) {
@@ -238,6 +255,7 @@ void rusiuotiStudentus(const vector<Student>& studentai, vector<Student>& vargsi
         }
     }
 }
+
 void spausdintiStudentusIFaila(const vector<Student>& studentai, const string& failoPavadinimas) {
     ofstream failas(failoPavadinimas);
 
@@ -246,39 +264,87 @@ void spausdintiStudentusIFaila(const vector<Student>& studentai, const string& f
         return;
     }
 
-    failas << "Vardas Pavarde Galutinis (Vid.)\n";
+    failas << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde" << setw(15) << left << "Galutinis (Vid.)\n";
     for (const auto& studentas : studentai) {
-        failas << studentas.vardas << " " << studentas.pavarde << " " << fixed << setprecision(2) << studentas.galutinisVid << "\n";
+        failas << setw(15) << left << studentas.vardas << " " << setw(15) << left << studentas.pavarde << " " << setw(15)
+               << left << fixed << setprecision(2) << studentas.galutinisVid << "\n";
     }
 
     failas.close();
 }
-void rusiuotiStudentusIrIssaugotiIFailus(const vector<Student>& studentai) {
+
+void rusiuotiStudentusIrIssaugotiIFailus(vector<Student>& studentai) {
     vector<Student> vargsiukai;
     vector<Student> kietiakiai;
-    
+
     rusiuotiStudentus(studentai, vargsiukai, kietiakiai);
 
     spausdintiStudentusIFaila(vargsiukai, "vargsiukai.txt");
-    cout << "Vargšiukai išsaugoti į failą 'vargsiukai.txt'.\n";
 
     spausdintiStudentusIFaila(kietiakiai, "kietiakiai.txt");
-    cout << "Kietiakiai išsaugoti į failą 'kietiakiai.txt'.\n";
+    cout << "Duomenys sekmingai surusiuoti ir isspausdinti i failus.\n";
 }
+
+void laikuMatavimaiBeGeneravimo(const string& failoPavadinimas, char sortChoice) {
+    auto readStart = high_resolution_clock::now();
+
+    vector<Student> studentai;
+    if (!skaitytiDuomenisIsFailo(studentai, failoPavadinimas)) {
+        cerr << "Nepavyko nuskaityti duomenu is failo." << endl;
+        return;
+    }
+
+    auto readEnd = high_resolution_clock::now();
+    duration<double> readTime = readEnd - readStart;
+    cout << "Failo nuskaitymo laikas: " << readTime.count() << " s\n";
+
+    auto sortStart = high_resolution_clock::now();
+    if (sortChoice == '1') {
+        sort(studentai.begin(), studentai.end(), compareByName);
+    } else if (sortChoice == '2') {
+        sort(studentai.begin(), studentai.end(), compareBySurname);
+    } else if (sortChoice == '3') {
+        sort(studentai.begin(), studentai.end(), compareByGrade);
+    } else {
+        cerr << "Neteisingas pasirinkimas!" << endl;
+    }
+    auto sortEnd = high_resolution_clock::now();
+    duration<double> sortTime = sortEnd - sortStart;
+    cout << "Rusiavimo laikas: " << sortTime.count() << " s\n";
+
+    auto divideStart = high_resolution_clock::now();
+    vector<Student> vargsiukai, kietiakiai;
+    rusiuotiStudentus(studentai, vargsiukai, kietiakiai);
+    auto divideEnd = high_resolution_clock::now();
+    duration<double> divideTime = divideEnd - divideStart;
+    cout << "Dalijimo i kietiakus ir vargsiukus laikas: " << divideTime.count() << " s\n";
+
+    auto saveVargsiukaiStart = high_resolution_clock::now();
+    spausdintiStudentusIFaila(vargsiukai, "vargsiukai.txt");
+    auto saveVargsiukaiEnd = high_resolution_clock::now();
+    duration<double> saveVargsiukaiTime = saveVargsiukaiEnd - saveVargsiukaiStart;
+    cout << "Vargsiuku isvedimo i faila laikas: " << saveVargsiukaiTime.count() << " s\n";
+
+    auto saveKietiakiaiStart = high_resolution_clock::now();
+    spausdintiStudentusIFaila(kietiakiai, "kietiakiai.txt");
+    auto saveKietiakiaiEnd = high_resolution_clock::now();
+    duration<double> saveKietiakiaiTime = saveKietiakiaiEnd - saveKietiakiaiStart;
+    cout << "Kietiaku isvedimo i faila laikas: " << saveKietiakiaiTime.count() << " s\n";
+}
+
+
+
 void laikuMatavimai(int studentuSkaicius, const string& failoPavadinimas) {
     auto start = high_resolution_clock::now();
 
     generuotiStudentuFaila(studentuSkaicius, failoPavadinimas);
 
     auto end = high_resolution_clock::now();
-
     duration<double> generationTime = end - start;
-
     cout << "Sugeneruotas failas: " << failoPavadinimas << " su " << studentuSkaicius << " irasu.\n";
     cout << "Failo generavimo laikas: " << generationTime.count() << " s\n";
 
     auto readStart = high_resolution_clock::now();
-
     vector<Student> studentai;
     skaitytiDuomenisIsFailo(studentai, failoPavadinimas);
 
@@ -311,6 +377,7 @@ void laikuMatavimai(int studentuSkaicius, const string& failoPavadinimas) {
     duration<double> saveKietiakiaiTime = saveKietiakiaiEnd - saveKietiakiaiStart;
     cout << "Kietiaku isvedimo i faila laikas: " << saveKietiakiaiTime.count() << " s\n";
 }
+
 void apdorotiVisusFailus() {
     vector<int> studentCounts = {1000, 10000, 100000, 1000000, 10000000};
     for (size_t i = 0; i < studentCounts.size(); ++i) {
