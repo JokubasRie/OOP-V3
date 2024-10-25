@@ -1,5 +1,6 @@
 #include "functions.h"
 #include "Mylib.h"
+#include "student.h"
 
 int atsitiktiniaiBalai(int min, int max) {
     static random_device rd;
@@ -17,7 +18,7 @@ void generuotiAtsitiktiniusBalus(Student& student, int kiekNd) {
     student.egz = atsitiktiniaiBalai();
 }
 
-bool skaitytiDuomenisIsFailo(vector<Student>& studentai, const string& failoPavadinimas) {
+bool skaitytiDuomenisIsFailo(list<Student>& studentai, const string& failoPavadinimas) {
     ifstream inputFile(failoPavadinimas);
     if (!inputFile.is_open()) {
         cerr << "Nepavyko atidaryti failo: " << failoPavadinimas << endl;
@@ -69,7 +70,7 @@ bool skaitytiDuomenisIsFailo(vector<Student>& studentai, const string& failoPava
     return true;
 }
 
-void skaitytiDuomenisIsVartotojo(vector<Student>& studentai) {
+void skaitytiDuomenisIsVartotojo(list<Student>& studentai) {
     int studentuKiekis;
     cout << "Keliu studentu duomenis norite ivesti? ";
     cin >> studentuKiekis;
@@ -164,46 +165,48 @@ void Student::skaiciuotiGalutiniMed() {
         galutinisMed = 0;
         return;
     }
-    vector<int> sorted_nd = nd;
-    sort(sorted_nd.begin(), sorted_nd.end());
-    if (sorted_nd.size() % 2 == 0)
-        galutinisMed = (sorted_nd[sorted_nd.size() / 2 - 1] + sorted_nd[sorted_nd.size() / 2]) / 2.0;
-    else
-        galutinisMed = sorted_nd[sorted_nd.size() / 2];
+    list<int> sorted_nd = nd;
+    sorted_nd.sort();
+    auto middle = next(sorted_nd.begin(), sorted_nd.size() / 2);
+    if (sorted_nd.size() % 2 == 0) {
+        galutinisMed = (*prev(middle) + *middle) / 2.0;
+    } else {
+        galutinisMed = *middle;
+    }
     galutinisMed = 0.4 * galutinisMed + 0.6 * egz;
 }
 
-void spausdintiStudentusVidurki(const vector<Student>& studentai) {
+void spausdintiStudentusVidurki(const list<Student>& studentai) {
     cout << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde"
-              << setw(20) << left << "Galutinis (Vid.)" << endl;
+         << setw(20) << left << "Galutinis (Vid.)" << endl;
     cout << "-------------------------------------------" << endl;
 
     for (const auto& student : studentai) {
         cout << setw(15) << left << student.vardas << setw(15) << left << student.pavarde
-                  << setw(20) << left << fixed << setprecision(2) << student.galutinisVid << endl;
+             << setw(20) << left << fixed << setprecision(2) << student.galutinisVid << endl;
     }
 }
 
-void spausdintiStudentusMediana(const vector<Student>& studentai) {
+void spausdintiStudentusMediana(const list<Student>& studentai) {
     cout << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde"
-              << setw(20) << left << "Galutinis (Med.)" << endl;
+         << setw(20) << left << "Galutinis (Med.)" << endl;
     cout << "-------------------------------------------" << endl;
 
     for (const auto& student : studentai) {
         cout << setw(15) << left << student.vardas << setw(15) << left << student.pavarde
-                  << setw(20) << left << fixed << setprecision(2) << student.galutinisMed << endl;
+             << setw(20) << left << fixed << setprecision(2) << student.galutinisMed << endl;
     }
 }
 
-void spausdintiStudentus(const vector<Student>& studentai) {
+void spausdintiStudentus(const list<Student>& studentai) {
     cout << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde"
-              << setw(20) << left << "Galutinis (Vid.)" << setw(20) << left << "Galutinis (Med.)" << endl;
+         << setw(20) << left << "Galutinis (Vid.)" << setw(20) << left << "Galutinis (Med.)" << endl;
     cout << "--------------------------------------------------------------------" << endl;
 
     for (const auto& student : studentai) {
         cout << setw(15) << left << student.vardas << setw(15) << left << student.pavarde
-                  << setw(20) << left << fixed << setprecision(2) << student.galutinisVid
-                  << setw(20) << left << fixed << setprecision(2) << student.galutinisMed << endl;
+             << setw(20) << left << fixed << setprecision(2) << student.galutinisVid
+             << setw(20) << left << fixed << setprecision(2) << student.galutinisMed << endl;
     }
 }
 
@@ -246,7 +249,7 @@ void generuotiStudentuFaila(int studentuSkaicius, const string& failoPavadinimas
     failas.close();
 }
 
-void rusiuotiStudentus(const vector<Student>& studentai, vector<Student>& vargsiukai, vector<Student>& kietiakiai) {
+void rusiuotiStudentus(const list<Student>& studentai, list<Student>& vargsiukai, list<Student>& kietiakiai) {
     for (const auto& studentas : studentai) {
         if (studentas.galutinisVid < 5.0) {
             vargsiukai.push_back(studentas);
@@ -256,7 +259,7 @@ void rusiuotiStudentus(const vector<Student>& studentai, vector<Student>& vargsi
     }
 }
 
-void spausdintiStudentusIFaila(const vector<Student>& studentai, const string& failoPavadinimas) {
+void spausdintiStudentusIFaila(const list<Student>& studentai, const string& failoPavadinimas) {
     ofstream failas(failoPavadinimas);
 
     if (!failas.is_open()) {
@@ -273,14 +276,14 @@ void spausdintiStudentusIFaila(const vector<Student>& studentai, const string& f
     failas.close();
 }
 
-void rusiuotiStudentusIrIssaugotiIFailus(vector<Student>& studentai) {
-    vector<Student> vargsiukai;
-    vector<Student> kietiakiai;
+void rusiuotiStudentusIrIssaugotiIFailus(list<Student>& studentai) {
+    studentai.sort(compareByName);  // Rūšiuojama pagal vardą
+    list<Student> vargsiukai;
+    list<Student> kietiakiai;
 
     rusiuotiStudentus(studentai, vargsiukai, kietiakiai);
 
     spausdintiStudentusIFaila(vargsiukai, "vargsiukai.txt");
-
     spausdintiStudentusIFaila(kietiakiai, "kietiakiai.txt");
     cout << "Duomenys sekmingai surusiuoti ir isspausdinti i failus.\n";
 }
@@ -325,9 +328,6 @@ void laikuMatavimaiBeGeneravimo(const string& failoPavadinimas, char sortChoice)
     cout << "Kietiaku isvedimo i faila laikas: " << timer.getElapsedTime() << " s\n";
 }
 
-
-
-
 void laikuMatavimai(int studentuSkaicius, const string& failoPavadinimas) {
     char sortChoice;
     cout << "Pagal ka norite rusiuoti? 1 - pagal varda, 2 - pagal pavarde, 3 - pagal galutini pazymi: ";
@@ -371,8 +371,6 @@ void laikuMatavimai(int studentuSkaicius, const string& failoPavadinimas) {
     spausdintiStudentusIFaila(kietiakiai, "kietiakiai.txt");
     cout << "Kietiaku isvedimo i faila laikas: " << timer.getElapsedTime() << " s\n";
 }
-
-
 
 void apdorotiVisusFailus() {
     list<int> studentCounts = {1000, 10000, 100000, 1000000, 10000000};
