@@ -288,22 +288,23 @@ void rusiuotiStudentusIrIssaugotiIFailus(vector<Student>& studentai) {
 void laikuMatavimaiBeGeneravimo(const string& failoPavadinimas, char sortChoice) {
     ChronoTimer timer;
 
-    vector<Student> studentai;
+    list<Student> studentai;
     if (!skaitytiDuomenisIsFailo(studentai, failoPavadinimas)) {
         cerr << "Nepavyko nuskaityti duomenu is failo." << endl;
         return;
     }
     cout << "Failo nuskaitymo laikas: " << timer.getElapsedTime() << " s\n";
 
+    // Rūšiavimo laikas pagal pasirinkimą
     timer.reset();
     if (sortChoice == '1') {
-        sort(studentai.begin(), studentai.end(), compareByName);
+        studentai.sort(compareByName);
         cout << "Rusiavimo pagal varda laikas: " << timer.getElapsedTime() << " s\n";
     } else if (sortChoice == '2') {
-        sort(studentai.begin(), studentai.end(), compareBySurname);
+        studentai.sort(compareBySurname);
         cout << "Rusiavimo pagal pavarde laikas: " << timer.getElapsedTime() << " s\n";
     } else if (sortChoice == '3') {
-        sort(studentai.begin(), studentai.end(), compareByGrade);
+        studentai.sort(compareByGrade);
         cout << "Rusiavimo pagal galutini pazymi laikas: " << timer.getElapsedTime() << " s\n";
     } else {
         cerr << "Neteisingas pasirinkimas!" << endl;
@@ -311,7 +312,7 @@ void laikuMatavimaiBeGeneravimo(const string& failoPavadinimas, char sortChoice)
     }
 
     timer.reset();
-    vector<Student> vargsiukai, kietiakiai;
+    list<Student> vargsiukai, kietiakiai;
     rusiuotiStudentus(studentai, vargsiukai, kietiakiai);
     cout << "Dalijimo i kietiakus ir vargsiukus laikas: " << timer.getElapsedTime() << " s\n";
 
