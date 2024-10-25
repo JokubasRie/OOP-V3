@@ -73,7 +73,7 @@ HDD - 932GB
 
 ![image](https://github.com/user-attachments/assets/f63673a3-e45a-49e1-bf7e-ea9c4bf19f82)
 
-***Kelių testų laikų vidurkiai***
+***Kelių testų laikų vidurkiai:***
 
 **1000:**
 
@@ -137,3 +137,8 @@ Veiksmas	- Vidurkis (s)
 1000000 vargšiukų išvedimo į failą laikas - 6,76164s 
 
 10000000 Failo generavimas - 	18,7489 s
+
+
+***Išvados***
+
+Kai naudojamas listas, o ne vektorius studentai į vargčiukus ir kietiakus padalinami greičiau.
