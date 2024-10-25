@@ -15,9 +15,9 @@ bool compareByName(const Student& a, const Student& b);
 int atsitiktiniaiBalai(int min = 0, int max = 10);
 string pasirinktiFaila();
 void generuotiStudentuFaila(int studentuSkaicius, const string& failoPavadinimas);
-void rusiuotiStudentus(const vector<Student>& studentai, vector<Student>& vargsiukai, vector<Student>& kietiakiai);
+void rusiuotiStudentus(const std::list<Student>& studentai, std::list<Student>& vargsiukai, std::list<Student>& kietiakiai);
 void spausdintiStudentusIFaila(const std::list<Student>& studentai, const std::string& failoPavadinimas);
-void rusiuotiStudentusIrIssaugotiIFailus(vector<Student>& studentai);
+void rusiuotiStudentusIrIssaugotiIFailus(std::list<Student>& studentai);
 void laikuMatavimai(int studentuSkaicius, const std::string& failoPavadinimas);
 void apdorotiVisusFailus();
 
