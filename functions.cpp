@@ -126,6 +126,8 @@ void skaitytiDuomenisIsVartotojo(list<Student>& studentai) {
         student.skaiciuotiGalutiniMed();
 
         studentai.push_back(student);
+
+
     }
 }
 
@@ -200,13 +202,13 @@ void spausdintiStudentusMediana(const list<Student>& studentai) {
 
 void spausdintiStudentus(const list<Student>& studentai) {
     cout << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde"
-         << setw(20) << left << "Galutinis (Vid.)" << setw(20) << left << "Galutinis (Med.)" << endl;
-    cout << "--------------------------------------------------------------------" << endl;
+         << setw(20) << left << "Galutinis (Vid.)" << setw(20) << left << "Galutinis (Med.)" << setw(25) << left << "Adresas atmintyje" <<  endl;
+    cout << "-------------------------------------------------------------------------------------------" << endl;
 
     for (const auto& student : studentai) {
         cout << setw(15) << left << student.vardas << setw(15) << left << student.pavarde
              << setw(20) << left << fixed << setprecision(2) << student.galutinisVid
-             << setw(20) << left << fixed << setprecision(2) << student.galutinisMed << endl;
+             << setw(20) << left << fixed << setprecision(2) << student.galutinisMed << setw(25) << left << &student << endl;
     }
 }
 
