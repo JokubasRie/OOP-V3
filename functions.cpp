@@ -376,6 +376,8 @@ void laikuMatavimai(int studentuSkaicius, const string& failoPavadinimas) {
     auto saveKietiakiaiEnd = high_resolution_clock::now();
     duration<double> saveKietiakiaiTime = saveKietiakiaiEnd - saveKietiakiaiStart;
     cout << "Kietiaku isvedimo i faila laikas: " << saveKietiakiaiTime.count() << " s\n";
+    cout << endl;
+
 }
 
 void apdorotiVisusFailus() {
