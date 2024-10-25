@@ -55,6 +55,10 @@ Paleidęs programą naudotojas sulaukia klausimo: ,,ar norite sugeneruoti duomen
 ![image](https://github.com/user-attachments/assets/80ea244c-3a4c-4c70-bcb4-d937c3bc8859)
 
 
+***V0.3***
+1. Atliekamas programos spartos tyrimas, kai vietoje std::vector<Studentai> naudojame std::list<Studentai>.
+2. Įvedant duomenis ranka, ekrane išspausdinamas objekto saugojimo atmintyje adresas.
+
 ***Kompiuterio parametrai:***
 
 CPU - Intel(R) Core(TM) i5-10300H CPU @ 2.50GHz
@@ -68,4 +72,15 @@ HDD - 932GB
 ***Rankinio įvedimo rezultatai su atmintyje saugomais adresais:***
 
 ![image](https://github.com/user-attachments/assets/f63673a3-e45a-49e1-bf7e-ea9c4bf19f82)
+
+***Kelių testų laikų vidurkiai***
+
+**1000:**
+
+Veiksmas	Vidurkis (s)
+1000 studentų rūšiavimo laikas	0s
+1000 kietiakų išvedimo į failą laikas	0.003070s
+1000 įrašų dalijimo į dvi grupes laikas	0.000502s
+1000 vargšiukų išvedimo į failą laikas	0 s 
+Failo generavimas                     	0 s
 
