@@ -55,4 +55,8 @@ Paleidęs programą naudotojas sulaukia klausimo: ,,ar norite sugeneruoti duomen
 ![image](https://github.com/user-attachments/assets/80ea244c-3a4c-4c70-bcb4-d937c3bc8859)
 
 
+***Kompiuterio parametrai:***
+CPU - Intel(R) Core(TM) i5-10300H CPU @ 2.50GHz
+RAM - 8GB
+SSD - 477GB
 
