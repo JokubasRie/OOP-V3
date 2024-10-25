@@ -30,10 +30,46 @@ int main() {
 
         vector<int> studentCounts = {1000, 10000, 100000, 1000000, 10000000};
 
+        if (mainChoice == '1') {
+        cout << "Koki faila norite sugeneruoti?\n";
+        cout << "1 - studentai_1000.txt\n";
+        cout << "2 - studentai_10000.txt\n";
+        cout << "3 - studentai_100000.txt\n";
+        cout << "4 - studentai_1000000.txt\n";
+        cout << "5 - studentai_10000000.txt\n";
+        cout << "0 - sugeneruoti visus failus\n";
+        char fileChoice;
+        cin >> fileChoice;
+
+        vector<int> studentCounts = {1000, 10000, 100000, 1000000, 10000000};
+
         if (fileChoice >= '1' && fileChoice <= '5') {
             int index = fileChoice - '1';
             string failoPavadinimas = "studentai_" + to_string(studentCounts[index]) + ".txt";
             laikuMatavimai(studentCounts[index], failoPavadinimas);
+
+            cout << "Kaip norite surusiuoti failus? 1 - pagal varda, 2 - pagal pavarde, 3 - pagal galutini pazymi: ";
+            char sortChoice;
+            cin >> sortChoice;
+
+            vector<Student> studentai;
+            if (!skaitytiDuomenisIsFailo(studentai, failoPavadinimas)) {
+                cerr << "Nepavyko nuskaityti duomenu is failo." << endl;
+                return 1;
+            }
+
+            if (sortChoice == '1') {
+                sort(studentai.begin(), studentai.end(), compareByName);
+            } else if (sortChoice == '2') {
+                sort(studentai.begin(), studentai.end(), compareBySurname);
+            } else if (sortChoice == '3') {
+                sort(studentai.begin(), studentai.end(), compareByGrade);
+            } else {
+                cerr << "Neteisingas pasirinkimas!" << endl;
+            }
+
+            rusiuotiStudentusIrIssaugotiIFailus(studentai);
+
         } else if (fileChoice == '0') {
             apdorotiVisusFailus();
         } else {
