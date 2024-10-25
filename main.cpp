@@ -1,5 +1,7 @@
 #include <iostream>
 #include "functions.h"
+#include <list>
+#include <iterator> // Reikia iteratoriams
 
 using namespace std;
 
@@ -29,18 +31,23 @@ int main() {
         char fileChoice;
         cin >> fileChoice;
 
-        vector<int> studentCounts = {1000, 10000, 100000, 1000000, 10000000};
+        list<int> studentCounts = {1000, 10000, 100000, 1000000, 10000000};
 
         if (fileChoice >= '1' && fileChoice <= '5') {
             int index = fileChoice - '1';
-            string failoPavadinimas = "studentai_" + to_string(studentCounts[index]) + ".txt";
-            laikuMatavimai(studentCounts[index], failoPavadinimas);
+
+            // Naudokite iteratorių, kad pasiektumėte n-tąjį elementą iš sąrašo
+            auto it = studentCounts.begin();
+            advance(it, index); // Pereiname prie reikiamo elemento
+
+            string failoPavadinimas = "studentai_" + to_string(*it) + ".txt";
+            laikuMatavimai(*it, failoPavadinimas);
 
         } else if (fileChoice == '0') {
-            vector<int> studentCounts = {1000, 10000, 100000, 1000000, 10000000};
-            for (size_t i = 0; i < studentCounts.size(); ++i) {
-                string failoPavadinimas = "studentai_" + to_string(studentCounts[i]) + ".txt";
-                laikuMatavimai(studentCounts[i], failoPavadinimas);
+            list<int> studentCounts = {1000, 10000, 100000, 1000000, 10000000};
+            for (int count : studentCounts) {
+                string failoPavadinimas = "studentai_" + to_string(count) + ".txt";
+                laikuMatavimai(count, failoPavadinimas);
             }
         } else {
             cerr << "Neteisingas pasirinkimas!" << endl;
@@ -55,7 +62,7 @@ int main() {
             laikuMatavimaiBeGeneravimo(failoPavadinimas, sortChoice);
         }
     } else if (mainChoice == '0') {
-        vector<Student> studentai;
+        list<Student> studentai;
         char pasirinkimas;
 
         try {
@@ -75,7 +82,7 @@ int main() {
                 return 1;
             }
 
-            sort(studentai.begin(), studentai.end(), compareByName);
+            studentai.sort(compareByName);
 
             char calcChoice;
             cout << "Ka norite apskaiciuoti? 1 - vidurkis, 2 - mediana, 0 - abu \n";
