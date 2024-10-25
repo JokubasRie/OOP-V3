@@ -4,10 +4,9 @@
 #include <vector>
 #include <string>
 #include "student.h"
+bool skaitytiDuomenisIsFailo(std::list<Student>& students, const std::string& failoPavadinimas);
+void skaitytiDuomenisIsVartotojo(std::list<Student>& students);
 
-bool skaitytiDuomenisIsFailo(vector<Student>& students, const string& failoPavadinimas);
-
-void skaitytiDuomenisIsVartotojo(vector<Student>& students);
 void spausdintiStudentus(const vector<Student>& students);
 void spausdintiStudentusVidurki(const vector<Student>& students);
 void spausdintiStudentusMediana(const vector<Student>& students);
