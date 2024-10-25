@@ -30,19 +30,6 @@ int main() {
 
         vector<int> studentCounts = {1000, 10000, 100000, 1000000, 10000000};
 
-        if (mainChoice == '1') {
-        cout << "Koki faila norite sugeneruoti?\n";
-        cout << "1 - studentai_1000.txt\n";
-        cout << "2 - studentai_10000.txt\n";
-        cout << "3 - studentai_100000.txt\n";
-        cout << "4 - studentai_1000000.txt\n";
-        cout << "5 - studentai_10000000.txt\n";
-        cout << "0 - sugeneruoti visus failus\n";
-        char fileChoice;
-        cin >> fileChoice;
-
-        vector<int> studentCounts = {1000, 10000, 100000, 1000000, 10000000};
-
         if (fileChoice >= '1' && fileChoice <= '5') {
             int index = fileChoice - '1';
             string failoPavadinimas = "studentai_" + to_string(studentCounts[index]) + ".txt";
@@ -74,6 +61,15 @@ int main() {
             apdorotiVisusFailus();
         } else {
             cerr << "Neteisingas pasirinkimas!" << endl;
+        }
+    } else if (mainChoice == '2') {
+        string failoPavadinimas = pasirinktiFaila();
+        if (!failoPavadinimas.empty()) {
+            cout << "Kaip norite surusiuoti failus? 1 - pagal varda, 2 - pagal pavarde, 3 - pagal galutini pazymi: ";
+            char sortChoice;
+            cin >> sortChoice;
+
+            laikuMatavimaiBeGeneravimo(failoPavadinimas, sortChoice);
         }
     } else if (mainChoice == '0') {
         vector<Student> studentai;
@@ -115,6 +111,7 @@ int main() {
                 default:
                     cerr << "Neteisingas pasirinkimas!" << endl;
             }
+
         } catch (const exception& e) {
             cerr << "Ivyko klaida: " << e.what() << endl;
         }
