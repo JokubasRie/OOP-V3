@@ -7,13 +7,13 @@ int main() {
     char mainChoice;
 
     while (true) {
-        cout << "Ar norite sugeneruoti studentu duomenu failus? 1 - Taip, 0 - Ne: ";
+        cout << "Ar norite sugeneruoti studentu duomenu failus? 1 - Taip, 0 - Ne, 2 - Naudoti jau sugeneruotus failus: ";
         cin >> mainChoice;
 
-        if (mainChoice == '1' || mainChoice == '0') {
+        if (mainChoice == '1' || mainChoice == '0' || mainChoice == '2') {
             break;
         } else {
-            cerr << "Neteisingas pasirinkimas. Prasome ivesti 1 arba 0.\n";
+            cerr << "Neteisingas pasirinkimas. Prasome ivesti 1, 0 arba 2.\n";
         }
     }
 
