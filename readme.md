@@ -83,10 +83,57 @@ Veiksmas	- Vidurkis (s)
 
 1000 kietiakų išvedimo į failą laikas - 0.003070s
 
-1000 įrašų dalijimo į dvi grupes laikas - 0.000502s
+1000 įrašų dalijimo į vargšiukus ir kietiakus laikas - 0.000502s
 
 1000 vargšiukų išvedimo į failą laikas - 0 s 
 
-Failo generavimas - 	0 s
+1000 Failo generavimas - 	0 s
+
+***10000:***
+
+10000 studentų rūšiavimo laikas - 0s 
+
+10000 kietiakų išvedimo į failą laikas - 0.0157431s
+
+10000 įrašų dalijimo į vargšiukus ir kietiakus laikas - 0.0157247s
+
+10000 vargšiukų išvedimo į failą laikas - 0s 
+
+10000Failo generavimas - 	0,0156177 s
 
 
+***100000:***
+
+100000 studentų rūšiavimo laikas - 0,0941269s 
+
+100000 kietiakų išvedimo į failą laikas - 0.109746s
+
+100000 įrašų dalijimo į vargšiukus ir kietiakus laikas - 0.109746s
+
+100000 vargšiukų išvedimo į failą laikas - 0,0654928s 
+
+100000 Failo generavimas - 	0,167111 s
+
+***1000000:***
+
+1000000 studentų rūšiavimo laikas - 1,05137s 
+
+1000000 kietiakų išvedimo į failą laikas - 0,736714s
+
+1000000 įrašų dalijimo į vargšiukus ir kietiakus laikas - 1,13003s
+
+1000000 vargšiukų išvedimo į failą laikas - 0,502124s 
+
+1000000 Failo generavimas - 	1,59979 s
+
+***10000000:***
+
+1000000 studentų rūšiavimo laikas - 18,4297s 
+
+1000000 kietiakų išvedimo į failą laikas - 14,4601s
+
+1000000 įrašų dalijimo į vargšiukus ir kietiakus laikas - 37,1144s
+
+1000000 vargšiukų išvedimo į failą laikas - 6,76164s 
+
+10000000 Failo generavimas - 	18,7489 s
