@@ -43,7 +43,7 @@
 5. void laikuMatavimai() - funkcija atlieka laikų matavimus keliais etapais. Ji pirmiausia sugeneruoja studentų duomenis į failą, tada matuoja laiką, kiek užtrunka failo nuskaitymas, studentų rūšiavimas, padalijimas į grupes, ir rezultato išsaugojimas atskiruose failuose.
 6. void apdorotiVisusFailus() - funkcija atlieka visų penkių studentų sąrašų generavimą, skaičiuojant laiką kiekvienam failui.
 
-***Programos veikimo paaiškinimas 2 ***
+***Programos veikimo paaiškinimas 2***
 
 Paleidęs programą naudotojas sulaukia klausimo: ,,ar norite sugeneruoti duomenu failus?" Jei pasirenka, kad nenori (t.y įveda 0), tai toliau naudotojo yra klausiami klausimai, kurie aprašyti programos veikimo paaiškinimo 1 dalyje. Tačiau, jei vartotojas pasirenka, jog nori sugeneruoti failus (t.y įveda 1), tai programa jam leidžia pasirinkti viena iš pateiktų failų variantų. Pasirinkęs, kokį nors iš variantų, jis ekrane išvysta pasirinkto failo analizę.
 
@@ -57,9 +57,11 @@ Paleidęs programą naudotojas sulaukia klausimo: ,,ar norite sugeneruoti duomen
 
 ***Kompiuterio parametrai:***
 
-CPU - Intel(R) Core(TM) i5-10300H CPU @ 2.50GHz
-RAM - 8GB
-SSD - 477GB
+*CPU - Intel(R) Core(TM) i5-10300H CPU @ 2.50GHz
+
+*RAM - 8GB
+
+*SSD - 477GB
 
 
 ***Rankinio įvedimo rezultatai su atmintyje saugomais adresais:***
