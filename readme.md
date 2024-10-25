@@ -50,9 +50,9 @@ Paleidęs programą naudotojas sulaukia klausimo: ,,ar norite sugeneruoti duomen
 
 ***Programos sugeneruotų rezultatų pavyzdys***
 
-![image](https://github.com/user-attachments/assets/ddab0099-3ce3-47c6-a3b0-6cf638d8affe)
-![image](https://github.com/user-attachments/assets/dc9f3651-99f7-4227-b031-b82c6989f850)
-![image](https://github.com/user-attachments/assets/f5e86aa0-3945-4e40-8cd6-4c209870ca81)
+![image](https://github.com/user-attachments/assets/3eaf229d-e584-458c-bd37-b3d253602f6c)
+![image](https://github.com/user-attachments/assets/b8fb3e9f-ec24-41c6-9f9f-d3977e23f138)
+![image](https://github.com/user-attachments/assets/80ea244c-3a4c-4c70-bcb4-d937c3bc8859)
 
 
 
