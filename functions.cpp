@@ -338,19 +338,19 @@ void laikuMatavimai(int studentuSkaicius, const string& failoPavadinimas) {
     cout << "Failo generavimo laikas: " << timer.getElapsedTime() << " s\n";
 
     timer.reset();
-    vector<Student> studentai;
+    list<Student> studentai;
     skaitytiDuomenisIsFailo(studentai, failoPavadinimas);
     cout << "Failo nuskaitymo laikas: " << timer.getElapsedTime() << " s\n";
 
     timer.reset();
     if (sortChoice == '1') {
-        sort(studentai.begin(), studentai.end(), compareByName);
+        studentai.sort(compareByName);
         cout << "Rusiavimo pagal varda laikas: " << timer.getElapsedTime() << " s\n";
     } else if (sortChoice == '2') {
-        sort(studentai.begin(), studentai.end(), compareBySurname);
+        studentai.sort(compareBySurname);
         cout << "Rusiavimo pagal pavarde laikas: " << timer.getElapsedTime() << " s\n";
     } else if (sortChoice == '3') {
-        sort(studentai.begin(), studentai.end(), compareByGrade);
+        studentai.sort(compareByGrade);
         cout << "Rusiavimo pagal galutini pazymi laikas: " << timer.getElapsedTime() << " s\n";
     } else {
         cerr << "Neteisingas pasirinkimas!" << endl;
@@ -358,7 +358,7 @@ void laikuMatavimai(int studentuSkaicius, const string& failoPavadinimas) {
     }
 
     timer.reset();
-    vector<Student> vargsiukai, kietiakiai;
+    list<Student> vargsiukai, kietiakiai;
     rusiuotiStudentus(studentai, vargsiukai, kietiakiai);
     cout << "Dalijimo i kietiakus ir vargsiukus laikas: " << timer.getElapsedTime() << " s\n";
 
@@ -370,7 +370,6 @@ void laikuMatavimai(int studentuSkaicius, const string& failoPavadinimas) {
     spausdintiStudentusIFaila(kietiakiai, "kietiakiai.txt");
     cout << "Kietiaku isvedimo i faila laikas: " << timer.getElapsedTime() << " s\n";
 }
-
 
 
 
