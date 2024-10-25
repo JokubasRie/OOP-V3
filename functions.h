@@ -7,16 +7,16 @@
 bool skaitytiDuomenisIsFailo(std::list<Student>& students, const std::string& failoPavadinimas);
 void skaitytiDuomenisIsVartotojo(std::list<Student>& students);
 
-void spausdintiStudentus(const vector<Student>& students);
-void spausdintiStudentusVidurki(const vector<Student>& students);
-void spausdintiStudentusMediana(const vector<Student>& students);
+void spausdintiStudentus(const std::list<Student>& students);
+void spausdintiStudentusVidurki(const std::list<Student>& students);
+void spausdintiStudentusMediana(const std::list<Student>& students);
 
 bool compareByName(const Student& a, const Student& b);
 int atsitiktiniaiBalai(int min = 0, int max = 10);
 string pasirinktiFaila();
 void generuotiStudentuFaila(int studentuSkaicius, const string& failoPavadinimas);
 void rusiuotiStudentus(const vector<Student>& studentai, vector<Student>& vargsiukai, vector<Student>& kietiakiai);
-void spausdintiStudentusIFaila(const vector<Student>& studentai, const string& failoPavadinimas);
+void spausdintiStudentusIFaila(const std::list<Student>& studentai, const std::string& failoPavadinimas);
 void rusiuotiStudentusIrIssaugotiIFailus(vector<Student>& studentai);
 void laikuMatavimai(int studentuSkaicius, const std::string& failoPavadinimas);
 void apdorotiVisusFailus();
