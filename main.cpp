@@ -18,6 +18,7 @@ int main() {
     }
 
     if (mainChoice == '1') {
+        // Klausimas apie failų generavimą
         cout << "Koki faila norite sugeneruoti?\n";
         cout << "1 - studentai_1000.txt\n";
         cout << "2 - studentai_10000.txt\n";
@@ -35,57 +36,11 @@ int main() {
             string failoPavadinimas = "studentai_" + to_string(studentCounts[index]) + ".txt";
             laikuMatavimai(studentCounts[index], failoPavadinimas);
 
-            cout << "Kaip norite surusiuoti failus? 1 - pagal varda, 2 - pagal pavarde, 3 - pagal galutini pazymi: ";
-            char sortChoice;
-            cin >> sortChoice;
-
-            vector<Student> studentai;
-            if (!skaitytiDuomenisIsFailo(studentai, failoPavadinimas)) {
-                cerr << "Nepavyko nuskaityti duomenu is failo." << endl;
-                return 1;
-            }
-
-            if (sortChoice == '1') {
-                sort(studentai.begin(), studentai.end(), compareByName);
-            } else if (sortChoice == '2') {
-                sort(studentai.begin(), studentai.end(), compareBySurname);
-            } else if (sortChoice == '3') {
-                sort(studentai.begin(), studentai.end(), compareByGrade);
-            } else {
-                cerr << "Neteisingas pasirinkimas!" << endl;
-            }
-
-            rusiuotiStudentusIrIssaugotiIFailus(studentai);
-
         } else if (fileChoice == '0') {
-            // Pridėtas rūšiavimo pasirinkimas sugeneravus visus failus
-            cout << "Kaip norite surusiuoti failus? 1 - pagal varda, 2 - pagal pavarde, 3 - pagal galutini pazymi: ";
-            char sortChoice;
-            cin >> sortChoice;
-
             vector<int> studentCounts = {1000, 10000, 100000, 1000000, 10000000};
             for (size_t i = 0; i < studentCounts.size(); ++i) {
                 string failoPavadinimas = "studentai_" + to_string(studentCounts[i]) + ".txt";
                 laikuMatavimai(studentCounts[i], failoPavadinimas);
-
-                vector<Student> studentai;
-                if (!skaitytiDuomenisIsFailo(studentai, failoPavadinimas)) {
-                    cerr << "Nepavyko nuskaityti duomenu is failo." << endl;
-                    return 1;
-                }
-
-                // Atlikti rūšiavimą pagal vartotojo pasirinkimą
-                if (sortChoice == '1') {
-                    sort(studentai.begin(), studentai.end(), compareByName);
-                } else if (sortChoice == '2') {
-                    sort(studentai.begin(), studentai.end(), compareBySurname);
-                } else if (sortChoice == '3') {
-                    sort(studentai.begin(), studentai.end(), compareByGrade);
-                } else {
-                    cerr << "Neteisingas pasirinkimas!" << endl;
-                }
-
-                rusiuotiStudentusIrIssaugotiIFailus(studentai);
             }
         } else {
             cerr << "Neteisingas pasirinkimas!" << endl;
@@ -93,8 +48,8 @@ int main() {
     } else if (mainChoice == '2') {
         string failoPavadinimas = pasirinktiFaila();
         if (!failoPavadinimas.empty()) {
-            cout << "Kaip norite surusiuoti failus? 1 - pagal varda, 2 - pagal pavarde, 3 - pagal galutini pazymi: ";
             char sortChoice;
+            cout << "Pagal ka norite rusiuoti? 1 - pagal varda, 2 - pagal pavarde, 3 - pagal galutini pazymi: ";
             cin >> sortChoice;
 
             laikuMatavimaiBeGeneravimo(failoPavadinimas, sortChoice);
@@ -102,9 +57,6 @@ int main() {
     } else if (mainChoice == '0') {
         vector<Student> studentai;
         char pasirinkimas;
-        cout << "Kaip norite surusiuoti failus? 1 - pagal varda, 2 - pagal pavarde, 3 - pagal galutini pazymi: ";
-        char sortChoice;
-        cin >> sortChoice;
 
         try {
             cout << "Ar norite ivesti duomenis rankiniu budu, ar nuskaityti is failo? 0 - rankiniu budu, 1 - is failo: ";
