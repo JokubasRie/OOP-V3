@@ -141,4 +141,4 @@ Veiksmas	- Vidurkis (s)
 
 ***Išvados***
 
-Kai naudojamas listas, o ne vektorius studentai į vargčiukus ir kietiakus padalinami greičiau.
+Kai naudojamas listas, o ne vektorius studentai į vargšiukus ir kietiakus padalinami greičiau. Tačiau, tai yra vienintelis aspektas, kuriame skaičiuojant didelių duomenų failų laikus listas yra pranašesnis už vektorių, nes tiek duomenų generavime, tiek išvedime, tiek nuskaityme, su vektoriais veiksmai atliekami kur kas greičiau nei su listais.
