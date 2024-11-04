@@ -69,9 +69,14 @@ SSD - 477GB
 
 HDD - 932GB
 
-***Rankinio įvedimo rezultatai su atmintyje saugomais adresais:***
+***Rankinio įvedimo rezultatai su atmintyje saugomais adresais (naudojant list konteinerį):***
 
 ![image](https://github.com/user-attachments/assets/f63673a3-e45a-49e1-bf7e-ea9c4bf19f82)
+
+***Rankinio įvedimo rezultatai su atmintyje saugomais adresais (naudojant vector konteinerį):***
+
+![image](https://github.com/user-attachments/assets/9490dc8d-8528-4d44-9939-640deb752baa)
+
 
 ***Kelių testų laikų vidurkiai:***
 
