@@ -153,6 +153,8 @@ Kai naudojamas listas, o ne vektorius studentai į vargšiukus ir kietiakus pada
 
 ## V1.0
 
+Realizuotos trys studentų skirstymo į du failus (vargšiukus ir kietiakus) strategijos naudojant tiek vector, tiek list konteinerius.
+
 ## Strategijos
 
 1 Strategija: naudojamas bendras studentų konteineris (vector arba list), kuris skaidomas į du naujus konteinerius: "vargšiukai" ir "kietiakai". 
