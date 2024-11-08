@@ -147,3 +147,52 @@ Veiksmas	- Vidurkis (s)
 ***Išvados***
 
 Kai naudojamas listas, o ne vektorius studentai į vargšiukus ir kietiakus padalinami greičiau. Tačiau, tai yra vienintelis aspektas, kuriame skaičiuojant didelių duomenų failų laikus listas yra pranašesnis už vektorių, nes tiek duomenų generavime, tiek išvedime, tiek nuskaityme, su vektoriais veiksmai atliekami kur kas greičiau nei su listais.
+
+
+***v1.0***
+
+***Laikai***
+
+###10000:
+
+| Veiksmas                              | 2_strategija vektoriai | 2_strategija listai |  vektoriai su std::partition | listai su  std::remove_if |
+|---------------------------------------|------------------------|---------------------|------------------------------|---------------------------|
+| Nuskaitymo iš failo laikas (s)        | 0,0468657              | 0,0657071           | 0,0316316                    | 0,0468633                 |
+| Rūšiavimo laikas (s)                  | 0                      | 0                   | 0                            | 0,0156217                 |
+| Dalijimo į dvi kategorijas laikas (s) | 0,78425                | 0                   | 0                            | 0                         |
+| Vargšiukų išvedimo į failą laikas (s) | 0,0156203              | 0,0156247           | 0,0156255                    | 0                         |
+| Kietiakų išvedimo į failą laikas (s)  | 0                      | 0,0312425           | 0,0156213                    | 0                         |
+
+
+###100000:
+
+| Veiksmas                              | 2_strategija vektoriai | 2_strategija listai | vektoriai su std::partition | listai su  std::remove_if |
+|---------------------------------------|------------------------|---------------------|-----------------------------|---------------------------|
+| Nuskaitymo iš failo laikas (s)        | 0,296614               | 0,548746            | 0,298046                    | 0,552085                  |
+| Rūšiavimo laikas (s)                  | 0,142994               | 0,0628796           | 0,141399                    | 0,0599154                 |
+| Dalijimo į dvi kategorijas laikas (s) | 77,9162                | 0,0624856           | 0,0312483                   | 0,0785116                 |
+| Vargšiukų išvedimo į failą laikas (s) | 0,0468338              | 0,0594771           | 0,0468614                   | 0,046863                  |
+| Kietiakų išvedimo į failą laikas (s)  | 0,0629341              | 0,0622636           | 0,0785039                   | 0,0785034                 |
+
+
+###1000000:
+
+| Veiksmas                              | 2_strategija vektoriai | 2_strategija listai | vektoriai su std::partition | listai su  std::remove_if |
+|---------------------------------------|------------------------|---------------------|-----------------------------|---------------------------|
+| Nuskaitymo iš failo laikas (s)        | 3,87373                | 4,77311             | 2,52475                     | 4,76952                   |
+| Rūšiavimo laikas (s)                  | 1,91405                | 0,873119            | 1,60056                     | 0,826462                  |
+| Dalijimo į dvi kategorijas laikas (s) |    -                   | 0,518548            | 0,266695                    | 0,663374                  |
+| Vargšiukų išvedimo į failą laikas (s) |    -                   | 0,467323            | 0,423231                    | 0,423652                  |
+| Kietiakų išvedimo į failą laikas (s)  |    -                   | 0,670398            | 0,597601                    | 0,690351                  |
+
+
+###10000000:
+
+| Veiksmas                              | 2_strategija vektoriai | 2_strategija listai | vektoriai su std::partition | listai su  std::remove_if |
+|---------------------------------------|------------------------|---------------------|-----------------------------|---------------------------|
+| Nuskaitymo iš failo laikas (s)        | 31,641                 | 58,4726             | 32,0403                     | 57,5271                   |
+| Rūšiavimo laikas (s)                  | 23,9927                | 15,0123             | 24,2912                     | 14,0141                   |
+| Dalijimo į dvi kategorijas laikas (s) |    -                   | 21,4616             | 3,58443                     | 20,7895                   |
+| Vargšiukų išvedimo į failą laikas (s) |    -                   | 6,06486             | 6,08612                     | 6,93211                   |
+| Kietiakų išvedimo į failą laikas (s)  |    -                   | 9,18397             | 8,21381                     | 9,10787                   |
+
