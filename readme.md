@@ -1,3 +1,4 @@
+# 1 užduotis
 ## V.pradinė
 1. Sukurta struktūra, kuri aprašo studento duomenis.
 2. Sukurtos funkcijos leidžiančios vartotojui įvesti duomenis ranka, pasirinkti namų darbų įvedimo būdą.
@@ -81,7 +82,7 @@ HDD - 932GB
 
 ## Kelių testų laikų vidurkiai:
 
-### 1000:**
+### 1000:
 
 Veiksmas	- Vidurkis (s)
 
