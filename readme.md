@@ -1,9 +1,9 @@
-## v.pradinė
+## V.pradinė
 1. Sukurta struktūra, kuri aprašo studento duomenis.
 2. Sukurtos funkcijos leidžiančios vartotojui įvesti duomenis ranka, pasirinkti namų darbų įvedimo būdą.
 3. Sukurtos funkcijos, kurios vartotojui pateikus duomenis pasirinktinai apskaičiuoja vidurkį, medianą arba abi reikšmės.
 
-## v0.1
+## V0.1
 1. Pridėta duomenų nuskaitymo iš failo galimybė.
 2. Pridėta galimybė pasirinkti vieną iš keturių pateiktų failų, kurį norima nuskaityti.
 3. Pridėtas studentų rūšiavimas pagal vardą.
@@ -31,7 +31,7 @@
 11. bool compareByName() – funkcija, kuri rūšiuoja studentus pagal vardą.
 
 
-## v0.2
+## V0.2
 
 Ši programa apdoroja studentų duomenis, generuoja atsitiktinius studentų įrašus su balais ir skirsto juos į dvi kategorijas: "vargšiukai" (galutinis balas < 5.0) ir "kietiakiai" (galutinis balas ≥ 5.0). Programa taip pat atlieka veikimo spartos analizę, įskaitant failų generavimą, duomenų nuskaitymą, studentų rūšiavimą bei išvedimą į skirtingus failus. 
 
