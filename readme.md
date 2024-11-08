@@ -151,6 +151,14 @@ Kai naudojamas listas, o ne vektorius studentai į vargšiukus ir kietiakus pada
 
 ***v1.0***
 
+***Strategijos***
+
+1 Strategija: naudojamas bendras studentų konteineris (vector arba list), kuris skaidomas į du naujus konteinerius: "vargšiukai" ir "kietiakai". 
+
+2 Strategija: sukuriamas tik vienas naujas konteineris "vargšiukai", į kurį perkeliami visi nepažangūs studentai, tuo pat metu ištrinant juos iš bendro studentų konteinerio. 
+
+3 Strategija: Optimizuota skaidymo strategija, pritaikant greičiausiai veikiančius metodus iš pirmosios arba antrosios strategijos, siekiant padidinti veikimo efektyvumą naudojant konteinerių operacijas. Vektoriams naudotas std::partition, o listam - std::remove_if metodas.
+
 ***Laikai***
 
 ###10000:
