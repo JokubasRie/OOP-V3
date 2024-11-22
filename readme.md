@@ -12,6 +12,16 @@
 | Vargšiukų išvedimo į failą laikas (s) | 0.423652                   | 0,459611                  |
 | Kietiakų išvedimo į failą laikas (s)  | 0.690351                   | 0,709529                  |
 
+### 10000000:
+| VEIKSMAS                              | VYKDYMO VID.(struct - lst) | VYKDYMO VID.(class - lst) |
+| ------------------------------------- | -------------------------- | ------------------------- |
+| Nuskaitymo iš failo laikas (s)        |                    |                    |
+| Rūšiavimo laikas                      |                    |                   |
+| Dalijimo į dvi kategorijas laikas (s) |                    |                   |
+| Vargšiukų išvedimo į failą laikas (s) |                    |                   |
+| Kietiakų išvedimo į failą laikas (s)  |                    |                   |
+
+
 # 1 užduotis
 ## V.pradinė
 1. Sukurta struktūra, kuri aprašo studento duomenis.
