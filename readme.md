@@ -6,7 +6,7 @@ Pasirinkta greičiausiai veikianti strategija ( 3 strategija su list konteineriu
 
 ## Laikai
 ### 1000000:
-| VEIKSMAS                              | VYKDYMO VID.(struct - lst) | VYKDYMO VID.(class - lst) |
+| VEIKSMAS                              | struct - list              | class - list              |
 | ------------------------------------- | -------------------------- | ------------------------- |
 | Nuskaitymo iš failo laikas (s)        | 4,76952                    | 5,80052                   |
 | Rūšiavimo laikas  (s)                 | 0,826462                   | 0,860157                  |
@@ -15,13 +15,15 @@ Pasirinkta greičiausiai veikianti strategija ( 3 strategija su list konteineriu
 | Kietiakų išvedimo į failą laikas (s)  | 0.690351                   | 0,709529                  |
 
 ### 10000000:
-| VEIKSMAS                              | VYKDYMO VID.(struct - lst) | VYKDYMO VID.(class - lst) |
+| VEIKSMAS                              | struct - list              | class - list              |
 | ------------------------------------- | -------------------------- | ------------------------- |
 | Nuskaitymo iš failo laikas (s)        | 57,5271                    | 71,515                    |
 | Rūšiavimo laikas (s)                  | 14,0141                    | 14,4516                   |
 | Dalijimo į dvi kategorijas laikas (s) | 20,7895                    | 15,8954                   |
 | Vargšiukų išvedimo į failą laikas (s) | 6,93211                    | 6,6906                    |
 | Kietiakų išvedimo į failą laikas (s)  | 9,10787                    | 8,12001                   |
+
+### Išvada
 
 
 # 1 užduotis
