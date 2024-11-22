@@ -1,6 +1,8 @@
 # 2 užduotis
 
 ## V1.1
+### Pakytis
+Pasirinkta greičiausiai veikianti strategija ( 3 strategija su list konteineriu) bei joje pareita nuo struktūros prie class.
 
 ## Laikai
 ### 1000000:
