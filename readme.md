@@ -3,7 +3,7 @@
 ## V1.1
 
 ## Laikai
-### 1000000
+### 1000000:
 | VEIKSMAS                              | VYKDYMO VID.(struct - lst) | VYKDYMO VID.(class - lst) |
 | ------------------------------------- | -------------------------- | ------------------------- |
 | Nuskaitymo iš failo laikas (s)        | 4,76952                    | 5,80052                   |
