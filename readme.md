@@ -15,11 +15,11 @@
 ### 10000000:
 | VEIKSMAS                              | VYKDYMO VID.(struct - lst) | VYKDYMO VID.(class - lst) |
 | ------------------------------------- | -------------------------- | ------------------------- |
-| Nuskaitymo iš failo laikas (s)        | 57,5271                    |                    |
-| Rūšiavimo laikas                      | 14,0141                    |                   |
-| Dalijimo į dvi kategorijas laikas (s) | 20,7895                    |                   |
-| Vargšiukų išvedimo į failą laikas (s) | 6,93211                    |                   |
-| Kietiakų išvedimo į failą laikas (s)  | 9,10787                    |                   |
+| Nuskaitymo iš failo laikas (s)        | 57,5271                    | 71,515                    |
+| Rūšiavimo laikas (s)                  | 14,0141                    | 14,4516                   |
+| Dalijimo į dvi kategorijas laikas (s) | 20,7895                    | 15,8954                   |
+| Vargšiukų išvedimo į failą laikas (s) | 6,93211                    | 6,6906                    |
+| Kietiakų išvedimo į failą laikas (s)  | 9,10787                    | 8,12001                   |
 
 
 # 1 užduotis
