@@ -24,7 +24,7 @@ Pasirinkta greičiausiai veikianti strategija ( 3 strategija su list konteineriu
 | Kietiakų išvedimo į failą laikas (s)  | 9,10787                    | 8,12001                   |
 
 ### Išvada
-
+Naudojant tiek class, tiek struct, testiniai laikai skyrėsi nežymiai. Su struct buvo truputį greitesni, taip yra dėl to, kad struktūra yra kiek paprastesnis tipas už klasę.
 
 # 1 užduotis
 ## V.pradinė
