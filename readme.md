@@ -7,7 +7,7 @@
 | VEIKSMAS                              | VYKDYMO VID.(struct - lst) | VYKDYMO VID.(class - lst) |
 | ------------------------------------- | -------------------------- | ------------------------- |
 | Nuskaitymo iš failo laikas (s)        | 4,76952                    | 5,80052                   |
-| Rūšiavimo laikas                      | 0,826462                   | 0,860157                  |
+| Rūšiavimo laikas  (s)                 | 0,826462                   | 0,860157                  |
 | Dalijimo į dvi kategorijas laikas (s) | 0.663374                   | 0,774395                  |
 | Vargšiukų išvedimo į failą laikas (s) | 0.423652                   | 0,459611                  |
 | Kietiakų išvedimo į failą laikas (s)  | 0.690351                   | 0,709529                  |
