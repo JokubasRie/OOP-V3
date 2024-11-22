@@ -1,3 +1,8 @@
+# 2 užduotis
+
+
+
+
 # 1 užduotis
 ## V.pradinė
 1. Sukurta struktūra, kuri aprašo studento duomenis.
