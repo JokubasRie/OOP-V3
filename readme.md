@@ -26,6 +26,10 @@ Pasirinkta greičiausiai veikianti strategija ( 3 strategija su list konteineriu
 ### Išvada
 Naudojant tiek class, tiek struct, testiniai laikai skyrėsi nežymiai. Su struct buvo truputį greitesni, taip yra dėl to, kad struktūra yra kiek paprastesnis tipas už klasę.
 
+## Struct ir Klasės versija ištirta su optimizavimo "flagais" (yra lentelė: greitis, exe failo dydis)
+
+
+
 # 1 užduotis
 ## V.pradinė
 1. Sukurta struktūra, kuri aprašo studento duomenis.
