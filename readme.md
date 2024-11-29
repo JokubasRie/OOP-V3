@@ -30,11 +30,11 @@ Naudojant tiek class, tiek struct, testiniai laikai skyrėsi nežymiai. Su struc
 ### 1000000 su class:
 | VEIKSMAS                              | O1 - class | O2 - class | O3 - class | O1 - struct | O2 - struct | O3 - struct |
 | ------------------------------------- | -----------| ---------- |----| ---------------|-----|-----|
-| Nuskaitymo iš failo laikas (s)        | 3.1338     | 3.8297     | 2.82809 | 2.36331 | 1.77297 |
-| Rūšiavimo laikas  (s)                 | 0.796284   | 0.872654   | 0.824136 | 0.86637 | 0.45788 |
-| Dalijimo į dvi kategorijas laikas (s) | 0.818503   | 0.892311   | 0.822055 | 0.730197 | 0.460517 |
-| Vargšiukų išvedimo į failą laikas (s) | 0.497318   | 0.570769   | 0.50281  | 0.511734 | 0.323299 |
-| Kietiakų išvedimo į failą laikas (s)  | 0.718272   | 0.790122   | 0.754015 | 0.788232 | 0.498377 |
+| Nuskaitymo iš failo laikas (s)        | 3.1338     | 3.8297     | 2.82809 | 2.36331 | 1.77297 | 1.76746 |
+| Rūšiavimo laikas  (s)                 | 0.796284   | 0.872654   | 0.824136 | 0.86637 | 0.45788 | 0.450768 |
+| Dalijimo į dvi kategorijas laikas (s) | 0.818503   | 0.892311   | 0.822055 | 0.730197 | 0.460517 | 0.454594 |
+| Vargšiukų išvedimo į failą laikas (s) | 0.497318   | 0.570769   | 0.50281  | 0.511734 | 0.323299 | 0.334027 |
+| Kietiakų išvedimo į failą laikas (s)  | 0.718272   | 0.790122   | 0.754015 | 0.788232 | 0.498377 | 0.544115 |
 
 ##  10000000 su class:
 
