@@ -40,11 +40,11 @@ Naudojant tiek class, tiek struct, testiniai laikai skyrėsi nežymiai. Su struc
 
 | VEIKSMAS                              | O1 - class | O2 - class | O3 - class | O1 - struct | O2 - struct | O3 - struct |
 | ------------------------------------- | -----------| ---------- |----| ---------------|-----|-----|
-| Nuskaitymo iš failo laikas (s)        | 33.7273    | 40.997 | 30.7714 | 31.0107
-| Rūšiavimo laikas  (s)                 | 24.3186    | 15.8573 | 15.9412 | 16.1357
-| Dalijimo į dvi kategorijas laikas (s) | 92.5839    | 13.139 | 22.0915 | 9.8583
-| Vargšiukų išvedimo į failą laikas (s) | 9.15377    | 6.72808 | 6.04138 | 7.29364
-| Kietiakų išvedimo į failą laikas (s)  | 8.8668     | 8.38991 | 6.36346 | 8.90526
+| Nuskaitymo iš failo laikas (s)        | 33.7273    | 40.997 | 30.7714 | 31.0107 | 22.056 |
+| Rūšiavimo laikas  (s)                 | 24.3186    | 15.8573 | 15.9412 | 16.1357 | 11.3657 |
+| Dalijimo į dvi kategorijas laikas (s) | 92.5839    | 13.139 | 22.0915 | 9.8583 | 15.8276 |
+| Vargšiukų išvedimo į failą laikas (s) | 9.15377    | 6.72808 | 6.04138 | 7.29364 | 4.08662 |
+| Kietiakų išvedimo į failą laikas (s)  | 8.8668     | 8.38991 | 6.36346 | 8.90526 | 6.00892 | 
 
 ### exe failo dydžiai baitais:
  Optimizavimo lygis     | Class   | Struct  |
