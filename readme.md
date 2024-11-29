@@ -27,9 +27,24 @@ Pasirinkta greičiausiai veikianti strategija ( 3 strategija su list konteineriu
 Naudojant tiek class, tiek struct, testiniai laikai skyrėsi nežymiai. Su struct buvo truputį greitesni, taip yra dėl to, kad struktūra yra kiek paprastesnis tipas už klasę.
 
 ## Struct ir Klasės versija ištirta su optimizavimo "flagais" (yra lentelė: greitis, exe failo dydis)
+### 1000000 su class:
+| VEIKSMAS                              | O1 - class | O2 - class | O3 - class | O1 - struct | O2 - struct | O3 - struct |
+| ------------------------------------- | -----------| ---------- |----| ---------------|-----|-----|
+| Nuskaitymo iš failo laikas (s)        | 3.1338     | 3.8297
+| Rūšiavimo laikas  (s)                 | 0.796284   | 0.872654
+| Dalijimo į dvi kategorijas laikas (s) | 0.818503   | 0.892311
+| Vargšiukų išvedimo į failą laikas (s) | 0.497318   | 0.570769
+| Kietiakų išvedimo į failą laikas (s)  | 0.718272   | 0.790122
 
+##  10000000 su class:
 
-
+| VEIKSMAS                              | O1 - class | O2 - class | O3 - class | O1 - struct | O2 - struct | O3 - struct |
+| ------------------------------------- | -----------| ---------- |----| ---------------|-----|-----|
+| Nuskaitymo iš failo laikas (s)        | 33.7273    | 40.997
+| Rūšiavimo laikas  (s)                 | 24.3186    | 15.8573
+| Dalijimo į dvi kategorijas laikas (s) | 92.5839    | 13.139
+| Vargšiukų išvedimo į failą laikas (s) | 9.15377    | 6.72808
+| Kietiakų išvedimo į failą laikas (s)  | 8.8668     | 8.38991
 # 1 užduotis
 ## V.pradinė
 1. Sukurta struktūra, kuri aprašo studento duomenis.
