@@ -45,6 +45,14 @@ Naudojant tiek class, tiek struct, testiniai laikai skyrėsi nežymiai. Su struc
 | Dalijimo į dvi kategorijas laikas (s) | 92.5839    | 13.139 | 22.0915 |
 | Vargšiukų išvedimo į failą laikas (s) | 9.15377    | 6.72808 | 6.04138 |
 | Kietiakų išvedimo į failą laikas (s)  | 8.8668     | 8.38991 | 6.36346 |
+
+### exe failo dydžiai baitais:
+ Optimizavimo lygis     | Class   | Struct  |
+|--------------|--------------|--------------|
+| O1 | 201 309  |   |
+| O2 | 203 446 |   |
+| O3 | 206 178 |   |
+
 # 1 užduotis
 ## V.pradinė
 1. Sukurta struktūra, kuri aprašo studento duomenis.
