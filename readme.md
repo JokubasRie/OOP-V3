@@ -49,9 +49,9 @@ Naudojant tiek class, tiek struct, testiniai laikai skyrėsi nežymiai. Su struc
 ### exe failo dydžiai baitais:
  Optimizavimo lygis     | Class   | Struct  |
 |--------------|--------------|--------------|
-| O1 | 201 309  |   |
-| O2 | 203 446 |   |
-| O3 | 206 178 |   |
+| O1 | 201 309  | 197 517 |
+| O2 | 203 446 | 200 788 |
+| O3 | 206 178 |200 836 |
 
 # 1 užduotis
 ## V.pradinė
