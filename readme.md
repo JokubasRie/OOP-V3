@@ -30,11 +30,11 @@ Naudojant tiek class, tiek struct, testiniai laikai skyrėsi nežymiai. Su struc
 ### 1000000 su class:
 | VEIKSMAS                              | O1 - class | O2 - class | O3 - class | O1 - struct | O2 - struct | O3 - struct |
 | ------------------------------------- | -----------| ---------- |----| ---------------|-----|-----|
-| Nuskaitymo iš failo laikas (s)        | 3.1338     | 3.8297
-| Rūšiavimo laikas  (s)                 | 0.796284   | 0.872654
-| Dalijimo į dvi kategorijas laikas (s) | 0.818503   | 0.892311
-| Vargšiukų išvedimo į failą laikas (s) | 0.497318   | 0.570769
-| Kietiakų išvedimo į failą laikas (s)  | 0.718272   | 0.790122
+| Nuskaitymo iš failo laikas (s)        | 3.1338     | 3.8297     | 2.82809 |
+| Rūšiavimo laikas  (s)                 | 0.796284   | 0.872654   | 0.824136 |
+| Dalijimo į dvi kategorijas laikas (s) | 0.818503   | 0.892311   | 0.822055 |
+| Vargšiukų išvedimo į failą laikas (s) | 0.497318   | 0.570769   | 0.50281  |
+| Kietiakų išvedimo į failą laikas (s)  | 0.718272   | 0.790122   | 0.754015 |
 
 ##  10000000 su class:
 
