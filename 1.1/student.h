@@ -20,6 +20,7 @@ public:
     Student();
     Student(const std::string& v, const std::string& p);
     ~Student(){
+        nd.clear();
     }
 
     std::string getVardas() const;
