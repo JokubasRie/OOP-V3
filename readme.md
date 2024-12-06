@@ -36,7 +36,7 @@
     }
 
 ## Pridėti operatoriai
-### Įvesties (>>):
+### Įvesties (>>) operatorius:
 - Įvesties operatorius leidžia patogiai įvesti studento duomenis tiesiai iš vartotojo ar failo. 
 - **Failas:** `student.h`
 - **Kodo vieta:**
@@ -54,7 +54,7 @@
         return in;
     }
 
-### Išvesties (<<):
+### Išvesties (<<) operatorius:
 - **Failas:** `student.h`
 - **Kodo vieta:**
   ```cpp
