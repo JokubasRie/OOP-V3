@@ -1,5 +1,9 @@
 # 2 užduotis
 
+## V1.2
+### Ką daro programa?
+Ši programa realizuoja visus „Rule of Three“ metodus ir įvesties/išvesties operatorius „Studentas“ klasei.
+
 ## V1.1
 ### Pokytis
 Pasirinkta greičiausiai veikianti strategija ( 3 strategija su list konteineriu) bei joje pareita nuo struktūros prie class.
