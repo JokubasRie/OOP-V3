@@ -37,6 +37,7 @@
 
 ## Pridėti operatoriai
 ### Įvesties (>>):
+- Įvesties operatorius leidžia patogiai įvesti studento duomenis tiesiai iš vartotojo ar failo. 
 - **Failas:** `student.h`
 - **Kodo vieta:**
   ```cpp
@@ -64,7 +65,9 @@
             << std::setw(20) << std::fixed << std::setprecision(2) << student.galutinisMed;
         return out;
     }
-  
+
+
+
 ## V1.1
 ### Pokytis
 Pasirinkta greičiausiai veikianti strategija ( 3 strategija su list konteineriu) bei joje pareita nuo struktūros prie class.
