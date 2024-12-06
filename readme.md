@@ -53,6 +53,18 @@
         return in;
     }
 
+### Išvesties (<<):
+- **Failas:** `student.h`
+- **Kodo vieta:**
+  ```cpp
+  friend std::ostream& operator<<(std::ostream& out, const Student& student) {
+        out << std::setw(15) << std::left << student.vardas
+            << std::setw(15) << std::left << student.pavarde
+            << std::setw(20) << std::fixed << std::setprecision(2) << student.galutinisVid
+            << std::setw(20) << std::fixed << std::setprecision(2) << student.galutinisMed;
+        return out;
+    }
+  
 ## V1.1
 ### Pokytis
 Pasirinkta greičiausiai veikianti strategija ( 3 strategija su list konteineriu) bei joje pareita nuo struktūros prie class.
