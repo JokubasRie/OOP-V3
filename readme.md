@@ -35,6 +35,24 @@
         return *this;
     }
 
+## Pridėti operatoriai
+### Įvesties (>>):
+- **Failas:** `student.h`
+- **Kodo vieta:**
+  ```cpp
+  friend std::istream& operator>>(std::istream& in, Student& student) {
+        in >> student.vardas >> student.pavarde >> student.egz;
+        int ndBalas;
+        student.nd.clear();
+        std::cout << "Įveskite namų darbų balus (baigti įveskite -1):\n";
+        while (in >> ndBalas && ndBalas != -1) {
+            student.nd.push_back(ndBalas);
+        }
+        student.skaiciuotiGalutiniVid();
+        student.skaiciuotiGalutiniMed();
+        return in;
+    }
+
 ## V1.1
 ### Pokytis
 Pasirinkta greičiausiai veikianti strategija ( 3 strategija su list konteineriu) bei joje pareita nuo struktūros prie class.
