@@ -4,6 +4,8 @@
 ### Ką daro programa?
 Ši programa realizuoja visus „Rule of Three“ metodus ir įvesties/išvesties operatorius „Student“ klasei.
 
+### Privalumas
+Operatorių dėka sumažėjo eilučių skaičius kode.
 ## ,,Rule of three" metodas
 
 ### 1. Destruktorius
