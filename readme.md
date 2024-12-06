@@ -55,6 +55,7 @@
     }
 
 ### Išvesties (<<) operatorius:
+- Išvesties operatorius leidžia patogiai išvesti studento duomenis į ekraną arba failą.
 - **Failas:** `student.h`
 - **Kodo vieta:**
   ```cpp
