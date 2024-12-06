@@ -4,6 +4,13 @@
 ### Ką daro programa?
 Ši programa realizuoja visus „Rule of Three“ metodus ir įvesties/išvesties operatorius „Student“ klasei.
 
+## ,,Rule of three" metodas
+
+### 1. Destruktorius
+- **Failas:** `student.h`
+- **Kodo vieta:**
+  ```cpp
+  ~Student() { nd.clear(); }
 ## V1.1
 ### Pokytis
 Pasirinkta greičiausiai veikianti strategija ( 3 strategija su list konteineriu) bei joje pareita nuo struktūros prie class.
