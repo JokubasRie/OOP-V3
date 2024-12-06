@@ -11,6 +11,14 @@
 - **Kodo vieta:**
   ```cpp
   ~Student() { nd.clear(); }
+### 2. Kopijavimo konstruktorius
+- **Failas:** `student.h`
+- **Kodo vieta:**
+  ```cpp
+   Student(const Student& other)
+        : vardas(other.vardas), pavarde(other.pavarde), nd(other.nd), egz(other.egz),
+          galutinisVid(other.galutinisVid), galutinisMed(other.galutinisMed) {}
+  
 ## V1.1
 ### Pokytis
 Pasirinkta greičiausiai veikianti strategija ( 3 strategija su list konteineriu) bei joje pareita nuo struktūros prie class.
