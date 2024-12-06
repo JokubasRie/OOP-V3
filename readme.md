@@ -22,6 +22,7 @@
           galutinisVid(other.galutinisVid), galutinisMed(other.galutinisMed) {}
 
 ### 3. Kopijavimo priskyrimo operatorius
+- Leidžia priskirti vieno objekto duomenis kitam egzistuojančiam objektui.
 - **Failas:** `student.h`
 - **Kodo vieta:**
   ```cpp
