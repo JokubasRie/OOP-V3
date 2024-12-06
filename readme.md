@@ -7,12 +7,13 @@
 ## ,,Rule of three" metodas
 
 ### 1. Destruktorius
-- Atsakingas už tai, kad ciklo pabaigoje būtų pašalinti visi namų darbų pažymiai:
+- Atsakingas už tai, kad ciklo pabaigoje būtų pašalinti visi namų darbų pažymiai.
 - **Failas:** `student.h`
 - **Kodo vieta:**
   ```cpp
   ~Student() { nd.clear(); }
 ### 2. Kopijavimo konstruktorius
+- Kuria naują objekto kopiją, nepriklausomą nuo originalo.
 - **Failas:** `student.h`
 - **Kodo vieta:**
   ```cpp
