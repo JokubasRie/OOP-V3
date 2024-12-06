@@ -18,7 +18,23 @@
    Student(const Student& other)
         : vardas(other.vardas), pavarde(other.pavarde), nd(other.nd), egz(other.egz),
           galutinisVid(other.galutinisVid), galutinisMed(other.galutinisMed) {}
-  
+
+### 3. Kopijavimo priskyrimo operatorius
+- **Failas:** `student.h`
+- **Kodo vieta:**
+  ```cpp
+  Student& operator=(const Student& other) {
+        if (this != &other) {
+            vardas = other.vardas;
+            pavarde = other.pavarde;
+            nd = other.nd;
+            egz = other.egz;
+            galutinisVid = other.galutinisVid;
+            galutinisMed = other.galutinisMed;
+        }
+        return *this;
+    }
+
 ## V1.1
 ### Pokytis
 Pasirinkta greičiausiai veikianti strategija ( 3 strategija su list konteineriu) bei joje pareita nuo struktūros prie class.
