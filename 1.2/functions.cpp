@@ -186,7 +186,6 @@ void spausdintiStudentus(const std::list<Student>& studentai) {
         return;
     }
 
-    // Spausdiname antraštę tik vieną kartą
     std::cout << std::setw(15) << std::left << "Vardas"
               << std::setw(15) << std::left << "Pavarde"
               << std::setw(20) << std::left << "Galutinis (Vid.)"
@@ -195,7 +194,6 @@ void spausdintiStudentus(const std::list<Student>& studentai) {
               << std::endl;
     std::cout << std::string(95, '-') << std::endl;
 
-    // Naudojame operatorių << spausdinti studentų duomenims
     for (const auto& student : studentai) {
         std::cout << student << std::setw(25) << std::left << &student << std::endl;
     }
