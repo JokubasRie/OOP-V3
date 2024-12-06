@@ -7,6 +7,7 @@
 ## ,,Rule of three" metodas
 
 ### 1. Destruktorius
+- Atsakingas už tai, kad ciklo pabaigoje būtų pašalinti visi namų darbų pažymiai:
 - **Failas:** `student.h`
 - **Kodo vieta:**
   ```cpp
