@@ -2,7 +2,7 @@
 
 ## V1.2
 ### Ką daro programa?
-Ši programa realizuoja visus „Rule of Three“ metodus ir įvesties/išvesties operatorius „Studentas“ klasei.
+Ši programa realizuoja visus „Rule of Three“ metodus ir įvesties/išvesties operatorius „Student“ klasei.
 
 ## V1.1
 ### Pokytis
