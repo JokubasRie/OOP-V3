@@ -2,75 +2,84 @@
 #include <list>
 #include "functions.h"
 #include "student.h"
-
+#include "Mylib.h"
 int main() {
     char mainChoice;
 
     while (true) {
-        std::cout << "Ar norite sugeneruoti studentu duomenu failus? 1 - Taip, 0 - Ne, 2 - Naudoti jau sugeneruotus failus: ";
-        std::cin >> mainChoice;
+        cout << "Ar norite sugeneruoti studentu duomenu failus? 1 - Taip, 0 - Ne, 2 - Naudoti jau sugeneruotus failus: ";
+        cin >> mainChoice;
 
         if (mainChoice == '1' || mainChoice == '0' || mainChoice == '2') {
             break;
         } else {
-            std::cerr << "Neteisingas pasirinkimas. Prasome ivesti 1, 0 arba 2.\n";
+            cerr << "Neteisingas pasirinkimas. Prasome ivesti 1, 0 arba 2.\n";
         }
     }
 
     if (mainChoice == '1') {
         char fileChoice;
-        std::cout << "Koki faila norite sugeneruoti?\n";
-        std::cout << "1 - studentai_1000.txt\n";
-        std::cout << "2 - studentai_10000.txt\n";
-        std::cout << "3 - studentai_100000.txt\n";
-        std::cout << "4 - studentai_1000000.txt\n";
-        std::cout << "5 - studentai_10000000.txt\n";
-        std::cout << "0 - sugeneruoti visus failus\n";
-        std::cin >> fileChoice;
+        cout << "Koki faila norite sugeneruoti?\n";
+        cout << "1 - studentai_1000.txt\n";
+        cout << "2 - studentai_10000.txt\n";
+        cout << "3 - studentai_100000.txt\n";
+        cout << "4 - studentai_1000000.txt\n";
+        cout << "5 - studentai_10000000.txt\n";
+        cout << "0 - sugeneruoti visus failus\n";
+        cin >> fileChoice;
 
         if (fileChoice >= '1' && fileChoice <= '5') {
-            int studentCount = std::stoi(std::string(1, fileChoice)) * 1000;
-            std::string failoPavadinimas = "studentai_" + std::to_string(studentCount) + ".txt";
+            int studentCount = stoi(string(1, fileChoice)) * 1000;
+            string failoPavadinimas = "studentai_" + to_string(studentCount) + ".txt";
             laikuMatavimai(studentCount, failoPavadinimas);
         } else if (fileChoice == '0') {
             apdorotiVisusFailus();
         } else {
-            std::cerr << "Neteisingas pasirinkimas!" << std::endl;
+            cerr << "Neteisingas pasirinkimas!" << endl;
         }
     } else if (mainChoice == '2') {
-        std::string failoPavadinimas = pasirinktiFaila();
+        string failoPavadinimas = pasirinktiFaila();
         if (!failoPavadinimas.empty()) {
             char sortChoice;
-            std::cout << "Pagal ka norite rusiuoti? 1 - pagal varda, 2 - pagal pavarde, 3 - pagal galutini pazymi: ";
-            std::cin >> sortChoice;
+            cout << "Pagal ka norite rusiuoti? 1 - pagal varda, 2 - pagal pavarde, 3 - pagal galutini pazymi: ";
+            cin >> sortChoice;
             laikuMatavimaiBeGeneravimo(failoPavadinimas, sortChoice);
         }
     } else if (mainChoice == '0') {
-        std::list<Student> studentai;
+        list<Student> studentai;
         char pasirinkimas;
 
-        std::cout << "Ar norite ivesti duomenis rankiniu budu, ar nuskaityti is failo? 0 - rankiniu budu, 1 - is failo: ";
-        std::cin >> pasirinkimas;
+        cout << "Ar norite ivesti duomenis rankiniu budu, ar nuskaityti is failo? 0 - rankiniu budu, 1 - is failo: ";
+        cin >> pasirinkimas;
 
         if (pasirinkimas == '1') {
-            std::string failoPavadinimas = pasirinktiFaila();
+            string failoPavadinimas = pasirinktiFaila();
             if (!skaitytiDuomenisIsFailo(studentai, failoPavadinimas)) {
-                std::cerr << "Nepavyko nuskaityti duomenu is failo." << std::endl;
+                cerr << "Nepavyko nuskaityti duomenu is failo." << endl;
                 return 1;
             }
         } else if (pasirinkimas == '0') {
-            skaitytiDuomenisIsVartotojo(studentai);
+            int studentuKiekis;
+            cout << "Kiek studentu duomenu norite ivesti? ";
+            cin >> studentuKiekis;
+
+            for (int i = 0; i < studentuKiekis; ++i) {
+                Student student;
+                cout << "Iveskite " << i + 1 << "-ojo studento duomenis:\n";
+                cin >> student;
+                studentai.push_back(student);
+            }
         } else {
-            std::cerr << "Atsiprasome, tokio pasirinkimo nera." << std::endl;
+            cerr << "Atsiprasome, tokio pasirinkimo nera." << endl;
             return 1;
         }
 
-        std::list<Student> vargsiukai;
+        list<Student> vargsiukai;
         rusiuotiStudentus(studentai, vargsiukai);
 
         char calcChoice;
-        std::cout << "Ka norite apskaiciuoti? 1 - vidurkis, 2 - mediana, 0 - abu \n";
-        std::cin >> calcChoice;
+        cout << "Ka norite apskaiciuoti? 1 - vidurkis, 2 - mediana, 0 - abu \n";
+        cin >> calcChoice;
 
         switch (calcChoice) {
             case '1':
@@ -86,7 +95,7 @@ int main() {
                 spausdintiStudentus(studentai);
                 break;
             default:
-                std::cerr << "Neteisingas pasirinkimas!" << std::endl;
+                cerr << "Neteisingas pasirinkimas!" << endl;
         }
     }
 
