@@ -1,7 +1,7 @@
 # 2 užduotis
 ## V1.5
 ### Apie
-Vietoj turimos student klasės sukurtos dvi: bazinė (abstrakti), kuri yra skirta bendrai aprašyti žmogų, ir jos išvestinė klasė student. Klasė ,,zmogus" yra abstrakčioji, todėl negalima sukurti žmogaus tipo objektų. Priešingas variantas yra su ,,student" klase. 
+Vietoj turimos student klasės sukurtos dvi: bazinė (abstrakti) ,,zmogus" klasė, kuri yra skirta bendrai aprašyti žmogų, ir jos išvestinė klasė student. Klasė ,,zmogus" yra abstrakčioji, todėl negalima sukurti žmogaus tipo objektų. Priešingas variantas yra su ,,student" klase. 
 ### Klasė zmogus
 ```cpp
 class Zmogus {
