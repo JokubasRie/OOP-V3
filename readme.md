@@ -20,7 +20,7 @@ public:
     // Destruktorius
     virtual ~Zmogus() = 0;
 };
-
+```
 
 
 ## V1.2
