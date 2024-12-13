@@ -135,6 +135,10 @@ public:
 };
 
 ```
+### Bandant sukurt žmogaus, o ne studento objektą:
+
+![image](https://github.com/user-attachments/assets/90acd887-7267-4386-8c99-e8fe134bcbce)
+
 
 ## V1.2
 ### Ką daro programa?
