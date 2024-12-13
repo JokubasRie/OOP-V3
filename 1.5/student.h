@@ -101,7 +101,7 @@ public:
 
         if (pasirinkimas == '1') {
             int kiekNd;
-            std::cout << "Kiek namu darbu pažymiu sugeneruoti? ";
+            std::cout << "Kiek namu darbu pazymiu sugeneruoti? ";
             in >> kiekNd;
 
             for (int i = 0; i < kiekNd; ++i) {
