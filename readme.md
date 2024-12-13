@@ -1,4 +1,27 @@
 # 2 užduotis
+## V1.5
+### Klasė Žmogus
+```cpp
+class Zmogus {
+protected:
+    string vardas;
+    string pavarde;
+
+public:
+    // Getter ir setter metodai
+    string getVardas() const { return vardas; }
+    string getPavarde() const { return pavarde; }
+    void setVardas(const string& v) { vardas = v; }
+    void setPavarde(const string& p) { pavarde = p; }
+
+    // Abstrakti funkcija
+    virtual void spausdintiInfo() const = 0;
+
+    // Destruktorius
+    virtual ~Zmogus() = 0;
+};
+
+
 
 ## V1.2
 ### Ką daro programa?
