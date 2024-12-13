@@ -47,15 +47,40 @@ Operatorių dėka sumažėjo eilučių skaičius kode.
 - **Kodo vieta:**
   ```cpp
   friend std::istream& operator>>(std::istream& in, Student& student) {
-        in >> student.vardas >> student.pavarde >> student.egz;
-        int ndBalas;
-        student.nd.clear();
-        std::cout << "Įveskite namų darbų balus (baigti įveskite -1):\n";
-        while (in >> ndBalas && ndBalas != -1) {
-            student.nd.push_back(ndBalas);
+        std::cout << "Iveskite studento varda: ";
+        in >> student.vardas;
+
+        std::cout << "Iveskite studento pavarde: ";
+        in >> student.pavarde;
+
+        char pasirinkimas;
+        std::cout << "Ar norite ivesti namu darbu ir egzamino pazymius patys, ar juos sugeneruoti? (0 - patys, 1 - sugeneruoti): ";
+        in >> pasirinkimas;
+
+        if (pasirinkimas == '1') {
+            int kiekNd;
+            std::cout << "Kiek namu darbu pažymiu sugeneruoti? ";
+            in >> kiekNd;
+
+            for (int i = 0; i < kiekNd; ++i) {
+                student.nd.push_back(rand() % 11); // Atsitiktiniai balai nuo 0 iki 10
+            }
+            student.egz = rand() % 11; // Atsitiktinis egzamino balas
+        } else {
+            int ndBalas;
+            student.nd.clear();
+            std::cout << "Iveskite namu darbu balus (iveskite -1, jei norite baigti):\n";
+            while (in >> ndBalas && ndBalas != -1) {
+                student.nd.push_back(ndBalas);
+            }
+
+            std::cout << "Iveskite egzamino rezultata: ";
+            in >> student.egz;
         }
+
         student.skaiciuotiGalutiniVid();
         student.skaiciuotiGalutiniMed();
+
         return in;
     }
 
