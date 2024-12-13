@@ -139,6 +139,11 @@ public:
 
 ![image](https://github.com/user-attachments/assets/90acd887-7267-4386-8c99-e8fe134bcbce)
 
+### Bandant sukurt studento objektą:
+
+![image](https://github.com/user-attachments/assets/b02ad845-dee8-4f63-a7e1-fbebe58f4444)
+
+
 
 ## V1.2
 ### Ką daro programa?
