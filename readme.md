@@ -13,6 +13,7 @@
 
 ## Programos versijų aprašymas
 * Sukurti programos diegimo failai - ***vertinimassetup.msi*** ir ***setup.exe*** (1.5 versijos pagrindu), ir jų diegimo instrukcija.
+
 # 2 užduotis
 ## V1.5
 ### Apie
