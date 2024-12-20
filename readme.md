@@ -1,3 +1,18 @@
+# 3 užduotis (3.0) 
+
+## Programos įdiegimo su su setup.exe ir išdiegimo instrukcija
+ * ***Įdiegimas:***
+   1. Atsisiųskite ***setup.zip*** failą;
+   2. Du kartus spustelėkite ***setup.exe*** failą, kad pradėtumėte diegimo procesą;
+   3. Atsiradusioje lentelėje spausti ***"Next"***, kad tęstumėte diegimą. Paspauskite ***"Finish"***, kad užbaigtumėte diegimą;
+   4. Dabar galite paleisti programą pasirinkdami ją iš ***Start meniu*** arba ***darbalaukio***.
+ * ***Išdiegimas (du būdai):***
+   1. Atidarius setup.msi failą pasirinkti ***"Remove"***;
+   2. Settings -> Apps -> Installed Apps; Surasti vertiniimas.exe ir pasirinkti ***"Remove"***.
+ 
+
+## Programos versijų aprašymas
+* Sukurti programos diegimo failai - ***vertinimassetup.msi*** ir ***setup.exe*** (1.5 versijos pagrindu), ir jų diegimo instrukcija.
 # 2 užduotis
 ## V1.5
 ### Apie
